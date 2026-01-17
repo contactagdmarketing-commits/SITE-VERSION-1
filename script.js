@@ -105,40 +105,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Premium scroll animations with Intersection Observer
-const observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const animationObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            // Add stagger effect
-            setTimeout(() => {
-                entry.target.classList.add('is-visible');
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }, index * 100);
-            
-            animationObserver.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Enhanced animation setup with multiple element types
-const animatedElements = document.querySelectorAll(
-    '.pricing-card, .testimonial-card, .concept-block, .stat-card, ' +
-    '.spec-card, .interior-thumb, .vehicle-details, section h2, section h3'
-);
-
-animatedElements.forEach((el, index) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(40px)';
-    el.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-    el.classList.add('animate-on-scroll');
-    animationObserver.observe(el);
-});
+// Scroll animations disabled per user request
+// All elements appear immediately without fade-in effects
 
 // Animated counter for stats
 function animateCounter(element) {
