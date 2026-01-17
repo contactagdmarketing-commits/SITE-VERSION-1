@@ -105,27 +105,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add animation on scroll (optional enhancement)
+// Premium scroll animations with Intersection Observer
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.15,
+    rootMargin: '0px 0px -100px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+const animationObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            // Add stagger effect
+            setTimeout(() => {
+                entry.target.classList.add('is-visible');
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }, index * 100);
+            
+            animationObserver.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe elements for animation
-document.querySelectorAll('.pricing-card, .testimonial-card, .concept-block, .stat-card').forEach(el => {
+// Enhanced animation setup with multiple element types
+const animatedElements = document.querySelectorAll(
+    '.pricing-card, .testimonial-card, .concept-block, .stat-card, ' +
+    '.spec-card, .interior-thumb, .vehicle-details, section h2, section h3'
+);
+
+animatedElements.forEach((el, index) => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+    el.style.transform = 'translateY(40px)';
+    el.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+    el.classList.add('animate-on-scroll');
+    animationObserver.observe(el);
 });
 
 // Animated counter for stats
@@ -161,3 +173,125 @@ const statsObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.stat-number').forEach(stat => {
     statsObserver.observe(stat);
 });
+
+// Interior Image Gallery
+const interiorThumbs = document.querySelectorAll('.interior-thumb');
+const mainInteriorImage = document.getElementById('mainInteriorImage');
+
+if (interiorThumbs.length > 0 && mainInteriorImage) {
+    interiorThumbs.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+            const imageSrc = thumb.getAttribute('data-image');
+            if (imageSrc) {
+                mainInteriorImage.src = imageSrc;
+                
+                // Update active state
+                interiorThumbs.forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+                
+                // Smooth fade effect
+                mainInteriorImage.style.opacity = '0';
+                setTimeout(() => {
+                    mainInteriorImage.style.opacity = '1';
+                }, 150);
+            }
+        });
+    });
+}
+
+// Add fade transition to main interior image
+if (mainInteriorImage) {
+    mainInteriorImage.style.transition = 'opacity 0.3s ease';
+}
+
+// Parallax effect for hero section
+const hero = document.querySelector('.hero');
+if (hero) {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxSpeed = 0.5;
+        hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+    });
+}
+
+// Enhanced header scroll effect
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+        header.style.boxShadow = '0 10px 30px -10px rgba(0, 0, 0, 0.1), 0 0 60px rgba(37, 99, 235, 0.08)';
+        header.style.backdropFilter = 'blur(25px) saturate(200%)';
+    } else {
+        header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+        header.style.backdropFilter = 'blur(20px) saturate(180%)';
+    }
+    
+    lastScroll = currentScroll;
+});
+
+// Add hover effect enhancement for cards
+const cards = document.querySelectorAll('.pricing-card, .spec-card, .testimonial-card');
+cards.forEach(card => {
+    card.addEventListener('mouseenter', function(e) {
+        this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.6, 1)';
+    });
+    
+    card.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+        
+        this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px) scale(1.02)`;
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
+    });
+});
+
+// Button ripple effect
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach(button => {
+    button.addEventListener('click', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const ripple = document.createElement('span');
+        ripple.style.cssText = `
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            left: ${x}px;
+            top: ${y}px;
+            transform: translate(-50%, -50%) scale(0);
+            animation: ripple 0.6s ease-out;
+            pointer-events: none;
+        `;
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => ripple.remove(), 600);
+    });
+});
+
+// Add ripple animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes ripple {
+        to {
+            transform: translate(-50%, -50%) scale(20);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
