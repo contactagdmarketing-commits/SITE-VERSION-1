@@ -182,7 +182,6 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(37, 99, 235, 0.1);
     transition: all var(--transition-smooth);
 }
 
@@ -203,7 +202,7 @@ body {
 }
 
 .navbar {
-    padding: var(--space-4) 0;
+    padding: var(--space-4) 0 var(--space-3) 0;
 }
 
 .navbar .container {
@@ -318,19 +317,13 @@ body {
 
 /* Floating CTA Bar - Premium Design */
 .floating-cta {
-    position: fixed;
-    top: -100px;
-    left: 0;
-    right: 0;
+    position: relative;
     background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 50%, var(--primary-800) 100%);
     color: var(--text-inverse);
     padding: var(--space-4) 0;
-    box-shadow: var(--shadow-premium);
-    z-index: 999;
-    transition: top var(--transition-smooth);
-    border-bottom: 2px solid var(--secondary-500);
-    position: relative;
+    box-shadow: var(--shadow-md);
     overflow: hidden;
+    margin-top: var(--space-4);
 }
 
 .floating-cta::before {
@@ -341,10 +334,6 @@ body {
         radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 40%),
         radial-gradient(circle at 80% 50%, rgba(251, 146, 60, 0.08) 0%, transparent 40%);
     pointer-events: none;
-}
-
-.floating-cta.show {
-    top: 73px;
 }
 
 .floating-cta-content {

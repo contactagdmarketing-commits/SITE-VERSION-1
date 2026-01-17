@@ -1,14 +1,6 @@
-// Floating CTA Bar
+// Floating CTA Bar - Always visible, sticky to header
 const floatingCta = document.getElementById('floatingCta');
 const header = document.querySelector('.header');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        floatingCta.classList.add('show');
-    } else {
-        floatingCta.classList.remove('show');
-    }
-});
 
 // Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
