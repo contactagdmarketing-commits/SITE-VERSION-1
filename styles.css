@@ -144,6 +144,8 @@ body {
     background-color: var(--bg-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    z-index: 0;
 }
 
 /* ============================================
@@ -445,6 +447,7 @@ body {
     text-align: center;
     position: relative;
     overflow: hidden;
+    z-index: 0;
 }
 
 .hero::before {
@@ -460,6 +463,7 @@ body {
         radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
     pointer-events: none;
     animation: heroGlow 20s ease-in-out infinite;
+    z-index: 0;
 }
 
 .hero::after {
@@ -472,6 +476,7 @@ body {
     background: 
         repeating-linear-gradient(45deg, transparent, transparent 80px, rgba(255, 255, 255, 0.02) 80px, rgba(255, 255, 255, 0.02) 160px);
     pointer-events: none;
+    z-index: 0;
 }
 
 .hero-content {
@@ -529,6 +534,9 @@ body {
    ============================================ */
 .concept-section {
     padding: var(--space-20) 0;
+    position: relative;
+    z-index: 0;
+    background: #fff;
 }
 
 .section-header {
@@ -576,6 +584,7 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow-xl);
     aspect-ratio: 4 / 3;
+    z-index: auto;
 }
 
 .concept-image img {
@@ -612,6 +621,8 @@ body {
 .why-section {
     background-color: var(--bg-secondary);
     padding: var(--space-20) 0;
+    position: relative;
+    z-index: auto;
 }
 
 .pricing-cards {
@@ -757,6 +768,9 @@ body {
    ============================================ */
 .testimonials-section {
     padding: var(--space-20) 0;
+    position: relative;
+    z-index: auto;
+    background: #fff;
 }
 
 .rating-display {
@@ -869,6 +883,7 @@ body {
     transition: all var(--transition-base);
     overflow: hidden;
     position: relative;
+    z-index: auto;
 }
 
 .concept-block:hover {
@@ -886,7 +901,8 @@ body {
     align-items: center;
     justify-content: center;
     background: transparent;
-    aspect-ratio: 4/3; 
+    aspect-ratio: 4/3;
+    z-index: auto;
 }
 
 .concept-illustration img {
@@ -964,6 +980,9 @@ body {
 .exam-section {
     padding: var(--space-20) 0;
     text-align: center;
+    position: relative;
+    z-index: auto;
+    background: #fff;
 }
 
 .exam-tabs {
@@ -1160,6 +1179,8 @@ body {
     padding: var(--space-12) 0;
     text-align: center;
     margin-bottom: var(--space-12);
+    position: relative;
+    z-index: auto;
 }
 
 .page-title {
@@ -1187,6 +1208,7 @@ body {
     min-height: 90vh;
     display: flex;
     align-items: center;
+    z-index: auto;
 }
 
 .vehicle-hero-bg {
@@ -1327,6 +1349,8 @@ body {
 .interior-section {
     padding: var(--space-24) 0;
     background: #f8fafc;
+    position: relative;
+    z-index: auto;
 }
 
 .section-header-left {
@@ -1421,6 +1445,8 @@ body {
 .tech-specs-section {
     padding: var(--space-24) 0;
     background: #fff;
+    position: relative;
+    z-index: auto;
 }
 
 .specs-grid-layout {
