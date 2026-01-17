@@ -52,42 +52,35 @@
 
     <!-- Hero Vehicle Section -->
     <section class="vehicle-hero-section">
+        <div class="vehicle-hero-bg"></div>
         <div class="container">
-            <div class="vehicle-hero-content">
-                <div class="vehicle-hero-image">
-                    <div class="vehicle-image-wrapper">
-                        <img src="clio.jpg" alt="Renault Clio - Véhicule auto-école" class="vehicle-main-image">
-                        <div class="vehicle-badge"><span class="icon-checkmark"></span> Conforme législation</div>
+            <div class="vehicle-showcase-grid">
+                <!-- Colonne Info -->
+                <div class="vehicle-info-col">
+                    <div class="brand-tag">RENAULT</div>
+                    <h1 class="model-title">CLIO 5</h1>
+                    <p class="model-subtitle">L'excellence de l'apprentissage</p>
+                    <div class="vehicle-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-value">Double</span>
+                            <span class="highlight-label">Commande</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-value">100%</span>
+                            <span class="highlight-label">Conforme</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-value">5/5</span>
+                            <span class="highlight-label">Sécurité</span>
+                        </div>
                     </div>
+                    <a href="inscription.html" class="btn btn-primary btn-lg">Réserver ce véhicule</a>
                 </div>
-                <div class="vehicle-hero-info">
-                    <div class="vehicle-brand-badge">Renault</div>
-                    <h2 class="vehicle-name">Clio</h2>
-                    <p class="vehicle-subtitle">Véhicule à double commande</p>
-                    <p class="vehicle-description">Notre Renault Clio est équipée d'un dispositif de double commande de frein, débrayage et de commandes électriques principales, conforme à la législation française (Article R317-25 du code de la route).</p>
-                    
-                    <div class="vehicle-features">
-                        <div class="feature-item">
-                            <div class="feature-icon icon-checkmark-custom"></div>
-                            <div class="feature-text">
-                                <strong>Double commande</strong>
-                                <span>Frein, débrayage et commandes électriques</span>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon icon-checkmark-custom"></div>
-                            <div class="feature-text">
-                                <strong>Conforme législation</strong>
-                                <span>Arrêté du 8 janvier 2001</span>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon icon-checkmark-custom"></div>
-                            <div class="feature-text">
-                                <strong>Type mine auto-école</strong>
-                                <span>Article R317-25 du code de la route</span>
-                            </div>
-                        </div>
+
+                <!-- Colonne Image -->
+                <div class="vehicle-image-col">
+                    <div class="vehicle-image-circle">
+                        <img src="clio.jpg" alt="Renault Clio 5 Auto-école" class="vehicle-hero-img">
                     </div>
                 </div>
             </div>
@@ -97,76 +90,81 @@
     <!-- Interior Gallery Section -->
     <section class="interior-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Intérieur du véhicule</h2>
-                <p class="section-subtitle">Découvrez l'aménagement intérieur avec double commande</p>
+            <div class="section-header-left">
+                <h2 class="section-title-large">Un poste de conduite <br>pensé pour vous</h2>
+                <p class="section-desc">Double commande intégrée, visibilité optimale et confort de conduite. L'environnement parfait pour apprendre en toute sérénité.</p>
             </div>
 
-            <div class="interior-showcase">
-                <div class="interior-main-image">
-                    <div class="interior-image-card">
-                        <img src="clio-interieur-1.png" alt="Intérieur Renault Clio - Double commande" id="mainInteriorImage">
-                        <div class="image-overlay">
-                            <span class="image-label">Vue principale</span>
-                        </div>
+            <div class="gallery-layout">
+                <div class="main-view">
+                    <img src="clio-interieur-1.png" alt="Vue intérieure principale" id="mainInteriorImage">
+                    <div class="view-overlay">
+                        <span class="view-tag">Vue cockpit</span>
                     </div>
                 </div>
-                <div class="interior-thumbnails">
-                    <div class="interior-thumb active" data-image="clio-interieur-1.png">
-                        <img src="clio-interieur-1.png" alt="Vue 1">
+                <div class="thumbnails-grid">
+                    <div class="thumb-item active" onclick="changeImage(this, 'clio-interieur-1.png')">
+                        <img src="clio-interieur-1.png" alt="Cockpit">
                     </div>
-                    <div class="interior-thumb" data-image="clio-interieur-2.png">
-                        <img src="clio-interieur-2.png" alt="Vue 2">
+                    <div class="thumb-item" onclick="changeImage(this, 'clio-interieur-2.png')">
+                        <img src="clio-interieur-2.png" alt="Passager">
                     </div>
-                    <div class="interior-thumb" data-image="clio-interieur-3.png">
-                        <img src="clio-interieur-3.png" alt="Vue 3">
+                    <div class="thumb-item" onclick="changeImage(this, 'clio-interieur-3.png')">
+                        <img src="clio-interieur-3.png" alt="Commandes">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Specifications Section -->
-    <section class="specifications-section">
+    <!-- Tech Specs Grid -->
+    <section class="tech-specs-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Caractéristiques techniques</h2>
-                <p class="section-subtitle">Tout ce qu'il faut savoir sur notre véhicule</p>
-            </div>
-
-            <div class="specs-grid">
-                <div class="spec-card">
-                    <div class="spec-icon icon-steering-wheel-svg">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
-                            <g transform="translate(50, 50)">
-                                <!-- Cercle extérieur -->
-                                <circle cx="0" cy="0" r="30" fill="none" stroke="currentColor" stroke-width="6"/>
-                                <!-- Rayons -->
-                                <line x1="0" y1="-10" x2="0" y2="-24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                                <line x1="-8.66" y1="5" x2="-20.78" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                                <line x1="8.66" y1="5" x2="20.78" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                                <!-- Cercle central -->
-                                <circle cx="0" cy="0" r="9" fill="currentColor"/>
-                            </g>
-                        </svg>
+            <div class="specs-grid-layout">
+                <!-- Card 1 -->
+                <div class="tech-card">
+                    <div class="tech-icon-wrapper">
+                        <div class="spec-icon icon-steering-wheel-svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+                                <g transform="translate(50, 50)">
+                                    <circle cx="0" cy="0" r="30" fill="none" stroke="currentColor" stroke-width="6"/>
+                                    <line x1="0" y1="-10" x2="0" y2="-24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                    <line x1="-8.66" y1="5" x2="-20.78" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                    <line x1="8.66" y1="5" x2="20.78" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                    <circle cx="0" cy="0" r="9" fill="currentColor"/>
+                                </g>
+                            </svg>
+                        </div>
                     </div>
-                    <h3 class="spec-title">Modèle</h3>
-                    <p class="spec-value">Renault Clio</p>
+                    <h3>Renault Clio</h3>
+                    <p>La référence des auto-écoles pour sa maniabilité exceptionnelle.</p>
                 </div>
-                <div class="spec-card">
-                    <div class="spec-icon icon-gear-transmission"></div>
-                    <h3 class="spec-title">Transmission</h3>
-                    <p class="spec-value">Boîte manuelle</p>
+
+                <!-- Card 2 -->
+                <div class="tech-card">
+                    <div class="tech-icon-wrapper">
+                        <div class="spec-icon icon-gear-transmission"></div>
+                    </div>
+                    <h3>Boîte Manuelle</h3>
+                    <p>Apprentissage complet de la mécanique de conduite.</p>
                 </div>
-                <div class="spec-card">
-                    <div class="spec-icon icon-shield"></div>
-                    <h3 class="spec-title">Conformité</h3>
-                    <p class="spec-value">Article R317-25</p>
+
+                <!-- Card 3 -->
+                <div class="tech-card">
+                    <div class="tech-icon-wrapper">
+                        <div class="spec-icon icon-double-command"></div>
+                    </div>
+                    <h3>Double Commande</h3>
+                    <p>Système de sécurité actif pour l'accompagnateur.</p>
                 </div>
-                <div class="spec-card">
-                    <div class="spec-icon icon-double-command"></div>
-                    <h3 class="spec-title">Double commande</h3>
-                    <p class="spec-value">Frein & Débrayage</p>
+
+                <!-- Card 4 -->
+                <div class="tech-card">
+                    <div class="tech-icon-wrapper">
+                        <div class="spec-icon icon-shield"></div>
+                    </div>
+                    <h3>Homologuée</h3>
+                    <p>Conforme à l'article R317-25 du code de la route.</p>
                 </div>
             </div>
         </div>

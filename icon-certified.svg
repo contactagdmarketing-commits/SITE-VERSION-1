@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Document -->
+    <path d="M25 15 L75 15 L75 85 L25 85 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+    <!-- Lignes de texte -->
+    <line x1="35" y1="30" x2="65" y2="30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <line x1="35" y1="40" x2="65" y2="40" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <line x1="35" y1="50" x2="55" y2="50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <!-- Sceau / Tampon -->
+    <circle cx="65" cy="70" r="12" fill="none" stroke="currentColor" stroke-width="3"/>
+    <path d="M60 70 L64 74 L72 64" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

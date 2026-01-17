@@ -134,34 +134,33 @@ document.querySelectorAll('.stat-number').forEach(stat => {
     statsObserver.observe(stat);
 });
 
-// Interior Image Gallery
-const interiorThumbs = document.querySelectorAll('.interior-thumb');
-const mainInteriorImage = document.getElementById('mainInteriorImage');
-
-if (interiorThumbs.length > 0 && mainInteriorImage) {
-    interiorThumbs.forEach(thumb => {
-        thumb.addEventListener('click', () => {
-            const imageSrc = thumb.getAttribute('data-image');
-            if (imageSrc) {
-                mainInteriorImage.src = imageSrc;
-                
-                // Update active state
-                interiorThumbs.forEach(t => t.classList.remove('active'));
-                thumb.classList.add('active');
-                
-                // Smooth fade effect
-                mainInteriorImage.style.opacity = '0';
-                setTimeout(() => {
-                    mainInteriorImage.style.opacity = '1';
-                }, 150);
-            }
-        });
-    });
+// Function to change main interior image with smooth transition
+function changeImage(element, imageSrc) {
+    const mainImage = document.getElementById('mainInteriorImage');
+    const thumbnails = document.querySelectorAll('.thumb-item');
+    
+    // Remove active class from all thumbnails
+    thumbnails.forEach(thumb => thumb.classList.remove('active'));
+    
+    // Add active class to clicked thumbnail
+    element.classList.add('active');
+    
+    // Fade out main image
+    mainImage.style.opacity = '0';
+    mainImage.style.transform = 'scale(0.95)';
+    
+    setTimeout(() => {
+        // Change source and fade in
+        mainImage.src = imageSrc;
+        mainImage.style.opacity = '1';
+        mainImage.style.transform = 'scale(1)';
+    }, 300);
 }
 
-// Add fade transition to main interior image
+// Ensure main image transition is set
+const mainInteriorImage = document.getElementById('mainInteriorImage');
 if (mainInteriorImage) {
-    mainInteriorImage.style.transition = 'opacity 0.3s ease';
+    mainInteriorImage.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
 }
 
 // Parallax effect for hero section
