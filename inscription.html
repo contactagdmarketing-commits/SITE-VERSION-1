@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Prendre rendez-vous - Candidalib</title>
+    <meta name="description" content="Inscrivez-vous pour réserver un véhicule à double commande. Leçons de conduite à 35€/h ou forfait 10h à 300€.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="index.html" class="logo">CANDIDALIB</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="vehicules.html" class="nav-link">Nos véhicules</a></li>
+                    <li><a href="candidat-libre.html" class="nav-link">Candidat libre</a></li>
+                    <li><a href="inscription.html" class="nav-link btn-nav active">Inscription</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Prendre rendez-vous</h1>
+            <p class="page-subtitle">Remplissez le formulaire ci-dessous et nous vous recontacterons rapidement</p>
+        </div>
+    </section>
+
+    <!-- Formulaire -->
+    <section class="form-section">
+        <div class="container">
+            <div class="form-wrapper">
+                <form id="inscriptionForm" class="inscription-form">
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telephone">Téléphone *</label>
+                        <input type="tel" id="telephone" name="telephone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date_naissance">Date de naissance *</label>
+                        <input type="date" id="date_naissance" name="date_naissance" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adresse">Adresse *</label>
+                        <input type="text" id="adresse" name="adresse" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="code_postal">Code postal *</label>
+                            <input type="text" id="code_postal" name="code_postal" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ville">Ville *</label>
+                            <input type="text" id="ville" name="ville" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="situation">Votre situation *</label>
+                        <select id="situation" name="situation" required>
+                            <option value="">Sélectionnez votre situation</option>
+                            <option value="candidat-libre">Candidat libre (sans auto-école)</option>
+                            <option value="heures-supplementaires">Heures supplémentaires (déjà en auto-école)</option>
+                            <option value="conduite-supervisee">Conduite supervisée</option>
+                            <option value="remise-niveau">Remise à niveau</option>
+                            <option value="repassage">Repasser le permis</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="formule">Formule souhaitée *</label>
+                        <select id="formule" name="formule" required>
+                            <option value="">Sélectionnez une formule</option>
+                            <option value="1h">1H - 35€</option>
+                            <option value="10h">Formule 10H - 300€</option>
+                            <option value="examen">Forfait examen - 70€</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message (optionnel)</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Précisez vos disponibilités ou toute autre information utile..."></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="rgpd" required>
+                            <span>J'accepte que mes données soient utilisées pour me recontacter *</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="cgu" required>
+                            <span>J'accepte les <a href="cgu.html" target="_blank">conditions générales d'utilisation</a> *</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">Envoyer la demande</button>
+                </form>
+
+                <div class="form-info">
+                    <h3>Informations importantes</h3>
+                    <ul>
+                        <li>Nous vous recontacterons sous 24-48h</li>
+                        <li>Les véhicules sont disponibles en boîte manuelle uniquement</li>
+                        <li>Un accompagnateur titulaire du permis depuis 5 ans minimum est requis</li>
+                        <li>Les examens blancs sont inclus dans les heures de conduite</li>
+                    </ul>
+
+                    <div class="pricing-summary">
+                        <h3>Nos tarifs</h3>
+                        <div class="price-item">
+                            <strong>1H de conduite :</strong> 35€
+                        </div>
+                        <div class="price-item">
+                            <strong>Formule 10H :</strong> 300€
+                        </div>
+                        <div class="price-item">
+                            <strong>Forfait examen :</strong> 70€
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">CANDIDALIB</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Découvrez-nous</a></li>
+                        <li><a href="index.html">Notre Concept</a></li>
+                        <li><a href="vehicules.html">Nos véhicules</a></li>
+                        <li><a href="index.html">Nos tarifs</a></li>
+                        <li><a href="candidat-libre.html">Candidat libre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">L'actualité</h3>
+                    <ul class="footer-links">
+                        <li><a href="mentions-legales.html">Mentions Légales</a></li>
+                        <li><a href="cgu.html">CGU</a></li>
+                        <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+                        <li><a href="inscription.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Suivez-nous !</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Candidalib. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

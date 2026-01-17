@@ -1,1 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidalib - Location de véhicule à double commande pour candidats libres</title>
+    <meta name="description" content="Candidalib propose la location de véhicules à double commande pour candidats libres au permis de conduire. Leçons de conduite à 35€/h ou forfait 10h à 300€.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="index.html" class="logo">CANDIDALIB</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                    <li><a href="vehicules.html" class="nav-link">Nos véhicules</a></li>
+                    <li><a href="candidat-libre.html" class="nav-link">Candidat libre</a></li>
+                    <li><a href="inscription.html" class="nav-link btn-nav">Inscription</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+        <!-- Floating CTA Bar -->
+        <div class="floating-cta" id="floatingCta">
+            <div class="container">
+                <div class="floating-cta-content">
+                    <span class="floating-cta-text">Prêt à commencer ?</span>
+                    <a href="inscription.html" class="btn btn-primary">Prendre rendez-vous</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge"><span class="icon-sparkle"></span> Solution économique pour candidats libres</div>
+                <h1 class="hero-title">Louer un véhicule à double commande</h1>
+                <h2 class="hero-subtitle">avec la solution <span class="highlight">Candidalib</span></h2>
+                <p class="hero-description">Préparez votre permis de conduire en toute liberté et à moindre coût</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Concept -->
+    <section class="concept-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">NOTRE CONCEPT</h2>
+                <h3 class="section-subtitle">Louer sa voiture auto-école, c'est moins cher.</h3>
+            </div>
+            <div class="concept-content">
+                <div class="concept-image">
+                    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop" alt="Véhicule à double commande pour apprentissage de la conduite">
+                </div>
+                <div class="concept-text">
+                    <p>Conduire sans se ruiner, c'est possible grâce à Candidalib. Ne vous laissez plus emporter par des heures de conduite trop chères en auto-école. Maîtrisez votre compteur d'heures supplémentaires et préparez votre permis de conduire en conduisant une voiture à double commande avec votre accompagnateur bénévole.</p>
+                    <p>Louez un véhicule à double commande aux normes pour votre préparation et votre examen.</p>
+                    <a href="candidat-libre.html" class="btn btn-secondary">Découvrir notre concept</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon icon-car"></div>
+                    <div class="stat-number" data-target="1819">0</div>
+                    <div class="stat-label">Clients satisfaits</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon icon-star"></div>
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-label">% de réussite</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon icon-money"></div>
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">% d'économies</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon icon-clock"></div>
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">h de réponse</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi Nous -->
+    <section class="why-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Pourquoi nous ?</h2>
+                <p class="section-intro">Des tarifs transparents, sans surprise</p>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="card-badge">1H</div>
+                    <div class="card-icon icon-time"></div>
+                    <h3 class="card-title">Pack par heure</h3>
+                    <p class="card-price">1h à partir de <strong>35€</strong></p>
+                    <ul class="card-features">
+                        <li><span class="icon-check"></span> Flexibilité totale</li>
+                        <li><span class="icon-check"></span> Réservation rapide</li>
+                        <li><span class="icon-check"></span> Sans engagement</li>
+                    </ul>
+                    <p class="card-description">Idéal pour des séances ponctuelles de perfectionnement</p>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="card-badge">Formule 10H</div>
+                    <div class="card-icon icon-diamond"></div>
+                    <h3 class="card-title">Forfait de 10 heures</h3>
+                    <p class="card-price">À partir de <strong>300€</strong></p>
+                    <div class="card-savings">Économisez 50€</div>
+                    <ul class="card-features">
+                        <li><span class="icon-check"></span> Meilleur rapport qualité/prix</li>
+                        <li><span class="icon-check"></span> Examens blancs inclus</li>
+                        <li><span class="icon-check"></span> Suivi personnalisé</li>
+                    </ul>
+                    <p class="card-description">Économisez avec notre forfait le plus avantageux</p>
+                </div>
+                <div class="pricing-card">
+                    <div class="card-badge">EXAMEN</div>
+                    <div class="card-icon icon-target"></div>
+                    <h3 class="card-title">Forfait présentation à l'examen</h3>
+                    <p class="card-price">À partir de <strong>70€</strong></p>
+                    <ul class="card-features">
+                        <li><span class="icon-check"></span> Entraînement sur parcours</li>
+                        <li><span class="icon-check"></span> Révision complète</li>
+                        <li><span class="icon-check"></span> Confiance maximale</li>
+                    </ul>
+                    <p class="card-description">Préparez-vous sereinement pour le jour J</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">NOS AVIS CLIENTS</h2>
+                <p class="section-subtitle">Quelques témoignages de nos clients</p>
+            </div>
+            <div class="rating-display">
+                <div class="stars">★★★★★</div>
+                <p class="rating-text">Parfait !</p>
+                <p class="rating-count">Note établie sur 1819 avis récoltés</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Après avoir effectué les heures obligatoires en auto-école, j'ai pris un forfait 10H pour perfectionner ma conduite. Le moniteur était très pédagogue et j'ai réussi mon permis du premier coup. Je recommande vivement !"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <p class="author-name">Sophie M.</p>
+                        <p class="author-location">Lyon</p>
+                        <p class="testimonial-date">Le 15/01/2025</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Excellent rapport qualité-prix ! J'ai économisé énormément par rapport aux heures supplémentaires de mon auto-école. Les véhicules sont en parfait état et l'équipe est très professionnelle."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <p class="author-name">Thomas L.</p>
+                        <p class="author-location">Paris</p>
+                        <p class="testimonial-date">Le 10/01/2025</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"En tant que candidat libre, Candidalib m'a permis de préparer mon examen dans les meilleures conditions. Le forfait examen est parfait pour s'entraîner sur le parcours. Merci pour votre accompagnement !"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <p class="author-name">Marie D.</p>
+                        <p class="author-location">Marseille</p>
+                        <p class="testimonial-date">Le 05/01/2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concepts détaillés -->
+    <section class="concepts-detailed">
+        <div class="container">
+            <!-- Candidat libre -->
+            <div class="concept-block">
+                <div class="concept-block-header">
+                    <h2 class="section-title">L'épreuve de la conduite en candidat libre</h2>
+                    <h3 class="section-subtitle">NOTRE CONCEPT</h3>
+                </div>
+                <div class="concept-block-content">
+                    <p>Passer votre permis de conduire sans rattachement à une auto-école, c'est possible. Qu'il s'agisse de votre examen théorique ou bien de votre épreuve pratique vous pouvez choisir cette formule à petit budget. Cette formule de formation vous permet un apprentissage en toute simplicité et en autonomie. Découvrez tout ce qu'il faut savoir à propos de l'examen pratique en candidat avec Candidalib.</p>
+                    <div class="conditions-box">
+                        <h4>CONDITIONS</h4>
+                        <p><strong>Apprenti :</strong> Avoir effectué 20h en auto-école</p>
+                        <p><strong>Accompagnateur :</strong> Être titulaire du permis de conduire depuis plus de 5 ans</p>
+                    </div>
+                    <a href="candidat-libre.html" class="btn btn-secondary">En savoir plus</a>
+                </div>
+            </div>
+
+            <!-- Remise à niveau -->
+            <div class="concept-block">
+                <div class="concept-block-header">
+                    <h2 class="section-title">Vous êtes en remise à niveau</h2>
+                    <h3 class="section-subtitle">NOTRE CONCEPT</h3>
+                </div>
+                <div class="concept-block-content">
+                    <p>Vous possédez déjà votre permis de conduire, mais vous n'avez pas conduit depuis un certain temps et vous manquez de confiance en vous. Candidalib vous permet de reprendre la main en étant accompagné de l'un de vos proches. La location de nos véhicules écoles vous permettra de retrouver vos acquis. Cette solution est très avantageuse car vous reverrez les éléments que vous jugerez essentiels à votre réapprentissage à la conduite.</p>
+                    <div class="conditions-box">
+                        <h4>CONDITIONS</h4>
+                        <p><strong>Apprenti :</strong> Être titulaire du permis</p>
+                        <p><strong>Accompagnateur :</strong> Être titulaire du permis depuis plus de 5 ans</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conduite supervisée -->
+            <div class="concept-block">
+                <div class="concept-block-header">
+                    <h2 class="section-title">Vous passez le permis ACC, 16 ans ou conduite supervisée</h2>
+                    <h3 class="section-subtitle">NOTRE CONCEPT</h3>
+                </div>
+                <div class="concept-block-content">
+                    <p>Vous venez de valider la durée initiale de formation avec votre auto-école et vous vous apprêtez à conduire officiellement avec votre accompagnateur bénévole sur les voies publiques. Cette épreuve est souvent redoutée par de nombreux apprentis, car ils vont devoir conduire avec une personne autre que leur formateur.</p>
+                    <div class="conditions-box">
+                        <h4>CONDITIONS</h4>
+                        <p><strong>Apprenti :</strong> Avoir effectué 20h en auto-école</p>
+                        <p><strong>Accompagnateur :</strong> Être titulaire du permis de conduire depuis plus de 5 ans</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Examen -->
+    <section class="exam-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Et pour l'examen ?</h2>
+            </div>
+            <div class="exam-tabs">
+                <button class="exam-tab active" data-tab="no-date">Vous n'avez pas encore de date d'examen</button>
+                <button class="exam-tab" data-tab="has-date">Vous avez une date d'examen</button>
+            </div>
+            <div class="exam-content">
+                <div class="exam-panel active" id="no-date">
+                    <p>Vous avez effectué les 20h obligatoires en auto-école avec un professionnel et vous souhaitez perfectionner votre conduite à petit prix pour obtenir une date d'examen. Louez nos véhicules école afin de compléter votre formation en auto-école, vous pourrez alors conduire quand vous le souhaitez et revoir tous les points que vous avez traités lors de apprentissage dans votre auto-école.</p>
+                    <p>La location de nos véhicules à double commande permet :</p>
+                    <ul class="benefits-list">
+                        <li>De mieux assimiler les objectifs non atteints lors de votre apprentissage dans votre auto-école</li>
+                        <li>De faire des économies considérables</li>
+                        <li>De vous faire gagner de la confiance et de l'assurance</li>
+                    </ul>
+                </div>
+                <div class="exam-panel" id="has-date">
+                    <p>Louez nos véhicules auto-école afin de vous entraîner à toute heure à moindre coût. Vous pourrez vous entraîner sur votre lieu d'examen tout en étant accompagné de la personne de votre choix. Le parcours de votre examen n'aura plus aucun secret pour vous le jour J.</p>
+                    <p>La solution Candidalib permet :</p>
+                    <ul class="benefits-list">
+                        <li>De réduire le coût excessif des heures supplémentaires de votre auto-école</li>
+                        <li>De faire des économies</li>
+                        <li>De renforcer votre apprentissage</li>
+                        <li>D'augmenter la durée de conduite sur votre lieu d'examen</li>
+                        <li>D'augmenter votre confiance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">CANDIDALIB</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Découvrez-nous</a></li>
+                        <li><a href="index.html">Notre Concept</a></li>
+                        <li><a href="vehicules.html">Nos véhicules</a></li>
+                        <li><a href="index.html">Nos tarifs</a></li>
+                        <li><a href="candidat-libre.html">Candidat libre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">L'actualité</h3>
+                    <ul class="footer-links">
+                        <li><a href="mentions-legales.html">Mentions Légales</a></li>
+                        <li><a href="cgu.html">CGU</a></li>
+                        <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+                        <li><a href="inscription.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Suivez-nous !</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Candidalib. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
