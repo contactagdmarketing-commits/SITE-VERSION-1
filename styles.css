@@ -1726,3 +1726,696 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE & TABLET
+   ============================================ */
+
+/* --- TABLET (768px - 1024px) --- */
+@media (max-width: 1024px) {
+    /* Container padding */
+    .container {
+        padding: 0 var(--space-4);
+    }
+    
+    /* Typography adjustments */
+    .hero-title {
+        font-size: var(--text-4xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--text-2xl);
+    }
+    
+    .section-title {
+        font-size: var(--text-2xl);
+    }
+    
+    .section-subtitle {
+        font-size: var(--text-lg);
+    }
+    
+    /* Pricing cards */
+    .pricing-cards {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .pricing-card.featured {
+        transform: scale(1);
+    }
+    
+    /* Testimonials */
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Concept content */
+    .concept-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    
+    /* Exam tabs */
+    .exam-tabs {
+        flex-direction: column;
+    }
+    
+    .exam-tab {
+        width: 100%;
+    }
+}
+
+/* --- MOBILE (< 768px) --- */
+@media (max-width: 768px) {
+    /* Base spacing */
+    :root {
+        --space-20: 3rem;
+        --space-24: 4rem;
+    }
+    
+    /* Header & Navigation */
+    .navbar {
+        padding: var(--space-3) 0;
+    }
+    
+    .logo-img {
+        height: 50px;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 73px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 73px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: var(--space-8) var(--space-6);
+        gap: var(--space-4);
+        transition: left var(--transition-smooth);
+        box-shadow: var(--shadow-xl);
+        z-index: 999;
+        overflow-y: auto;
+        align-items: stretch;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-link {
+        padding: var(--space-3) var(--space-4);
+        border-radius: var(--radius-md);
+        text-align: center;
+        font-size: var(--text-base);
+    }
+    
+    .nav-link:hover {
+        background: var(--primary-50);
+    }
+    
+    .btn-nav {
+        margin-top: var(--space-4);
+    }
+    
+    /* Menu Toggle Button (Hamburger) */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+    }
+    
+    .menu-toggle span {
+        width: 30px;
+        height: 3px;
+        background: var(--primary-600);
+        border-radius: 10px;
+        transition: all var(--transition-base);
+        transform-origin: center;
+    }
+    
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    /* Floating CTA Bar */
+    .floating-cta {
+        padding: var(--space-3) 0;
+        margin-top: var(--space-3);
+    }
+    
+    .floating-cta-content {
+        flex-direction: column;
+        gap: var(--space-3);
+        text-align: center;
+    }
+    
+    .floating-cta-text {
+        font-size: var(--text-sm);
+    }
+    
+    .floating-cta .btn {
+        width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: var(--space-16) 0 var(--space-12);
+    }
+    
+    .hero-title {
+        font-size: var(--text-3xl);
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: var(--text-xl);
+    }
+    
+    .hero-description {
+        font-size: var(--text-base);
+    }
+    
+    .hero-badge {
+        font-size: var(--text-xs);
+        padding: var(--space-1) var(--space-3);
+    }
+    
+    /* Sections */
+    .concept-section,
+    .why-section,
+    .testimonials-section,
+    .exam-section,
+    .concepts-detailed {
+        padding: var(--space-12) 0;
+    }
+    
+    .section-header {
+        margin-bottom: var(--space-8);
+    }
+    
+    .section-title {
+        font-size: var(--text-xl);
+    }
+    
+    .section-subtitle {
+        font-size: var(--text-base);
+    }
+    
+    /* Concept */
+    .concept-image img {
+        width: 120%;
+        height: 120%;
+        margin: -10%;
+    }
+    
+    .concept-text p {
+        font-size: var(--text-base);
+    }
+    
+    /* Pricing Cards */
+    .pricing-cards {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .pricing-card {
+        padding: var(--space-6);
+    }
+    
+    .card-title {
+        font-size: var(--text-lg);
+    }
+    
+    .card-price strong {
+        font-size: var(--text-3xl);
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: var(--space-3) var(--space-5);
+        font-size: var(--text-sm);
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .btn-lg {
+        padding: var(--space-3) var(--space-6);
+        font-size: var(--text-base);
+    }
+    
+    /* Testimonials */
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .testimonial-card {
+        padding: var(--space-6);
+    }
+    
+    /* Concept Blocks */
+    .concept-block {
+        padding: var(--space-6);
+        margin-bottom: var(--space-8);
+        gap: var(--space-6);
+    }
+    
+    .concept-illustration {
+        aspect-ratio: 1;
+    }
+    
+    .concept-illustration img {
+        width: 250%;
+        height: 250%;
+        margin: -75%;
+    }
+    
+    /* Exam Section */
+    .exam-tabs {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+    
+    .exam-tab {
+        width: 100%;
+        padding: var(--space-3) var(--space-4);
+        font-size: var(--text-sm);
+    }
+    
+    .exam-content {
+        padding: var(--space-6);
+    }
+    
+    /* Footer */
+    .footer {
+        padding: var(--space-12) 0 var(--space-4);
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    
+    .footer-title {
+        font-size: var(--text-base);
+    }
+    
+    .social-links {
+        flex-wrap: wrap;
+    }
+    
+    /* Page Header */
+    .page-header {
+        padding: var(--space-8) 0;
+        margin-bottom: var(--space-8);
+    }
+    
+    .page-title {
+        font-size: var(--text-2xl);
+    }
+    
+    .page-subtitle {
+        font-size: var(--text-base);
+    }
+    
+    /* === VEHICLE PAGE RESPONSIVE === */
+    
+    /* Vehicle Hero */
+    .vehicle-hero-section {
+        min-height: auto;
+        padding: var(--space-12) 0;
+    }
+    
+    .vehicle-showcase-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        text-align: center;
+    }
+    
+    .vehicle-info-col {
+        order: 2;
+    }
+    
+    .vehicle-image-col {
+        order: 1;
+    }
+    
+    .vehicle-image-circle {
+        max-width: 320px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+    }
+    
+    .vehicle-hero-img {
+        width: 130%;
+        height: 130%;
+    }
+    
+    .brand-tag {
+        font-size: var(--text-xs);
+        padding: 4px 12px;
+    }
+    
+    .model-title {
+        font-size: 3.5rem;
+        margin-bottom: var(--space-3);
+    }
+    
+    .model-subtitle {
+        font-size: var(--text-lg);
+        margin-bottom: var(--space-6);
+    }
+    
+    .vehicle-highlights {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-6);
+        margin-bottom: var(--space-8);
+    }
+    
+    .highlight-value {
+        font-size: 1.5rem;
+    }
+    
+    .highlight-label {
+        font-size: var(--text-xs);
+    }
+    
+    /* Interior Section */
+    .interior-section {
+        padding: var(--space-12) 0;
+    }
+    
+    .section-header-left {
+        margin-bottom: var(--space-8);
+    }
+    
+    .section-title-large {
+        font-size: var(--text-2xl);
+        margin-bottom: var(--space-4);
+    }
+    
+    .section-desc {
+        font-size: var(--text-base);
+    }
+    
+    .gallery-layout {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: var(--space-4);
+    }
+    
+    .main-view {
+        height: 300px;
+    }
+    
+    .thumbnails-grid {
+        flex-direction: row;
+        height: auto;
+        gap: var(--space-3);
+    }
+    
+    .thumb-item {
+        height: 100px;
+    }
+    
+    .view-tag {
+        font-size: var(--text-xs);
+        padding: 6px 14px;
+    }
+    
+    /* Tech Specs */
+    .tech-specs-section {
+        padding: var(--space-12) 0;
+    }
+    
+    .specs-grid-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .tech-card {
+        padding: var(--space-6);
+    }
+    
+    .tech-icon-wrapper {
+        width: 50px;
+        height: 50px;
+        margin-bottom: var(--space-4);
+    }
+    
+    .tech-card h3 {
+        font-size: var(--text-lg);
+        margin-bottom: var(--space-2);
+    }
+    
+    .tech-card p {
+        font-size: var(--text-sm);
+    }
+    
+    .tech-icon-wrapper .spec-icon {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* --- SMALL MOBILE (< 480px) --- */
+@media (max-width: 480px) {
+    /* Typography ultra-compact */
+    .hero-title {
+        font-size: var(--text-2xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--text-lg);
+    }
+    
+    .model-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title-large {
+        font-size: var(--text-xl);
+    }
+    
+    /* Spacing ultra-compact */
+    .hero {
+        padding: var(--space-12) 0 var(--space-8);
+    }
+    
+    .concept-section,
+    .why-section,
+    .testimonials-section,
+    .exam-section {
+        padding: var(--space-8) 0;
+    }
+    
+    /* Cards */
+    .pricing-card {
+        padding: var(--space-5);
+    }
+    
+    .testimonial-card {
+        padding: var(--space-5);
+    }
+    
+    /* Vehicle image smaller */
+    .vehicle-image-circle {
+        max-width: 280px;
+    }
+    
+    .vehicle-highlights {
+        gap: var(--space-4);
+    }
+    
+    .highlight-value {
+        font-size: 1.3rem;
+    }
+    
+    /* Gallery */
+    .main-view {
+        height: 240px;
+    }
+    
+    .thumb-item {
+        height: 80px;
+    }
+}
+
+/* Show menu toggle button on mobile, hide on desktop */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    /* === FORM RESPONSIVE === */
+    .form-wrapper {
+        padding: var(--space-6);
+    }
+    
+    .inscription-form {
+        padding: var(--space-6);
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .form-group {
+        margin-bottom: var(--space-4);
+    }
+    
+    .form-group label {
+        font-size: var(--text-sm);
+        margin-bottom: var(--space-2);
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: var(--text-base);
+        padding: var(--space-3);
+    }
+    
+    .checkbox-group {
+        font-size: var(--text-sm);
+    }
+    
+    .checkbox-group label {
+        padding-left: var(--space-6);
+    }
+    
+    /* === CGU / MENTIONS LEGALES RESPONSIVE === */
+    .content-section {
+        padding: var(--space-8) 0;
+    }
+    
+    .content-block {
+        margin-bottom: var(--space-8);
+    }
+    
+    .content-title {
+        font-size: var(--text-xl);
+        margin-bottom: var(--space-4);
+    }
+    
+    .content-block p,
+    .content-block ul,
+    .content-block ol {
+        font-size: var(--text-base);
+        line-height: 1.6;
+    }
+    
+    .content-block ul li,
+    .content-block ol li {
+        margin-bottom: var(--space-2);
+        padding-left: var(--space-2);
+    }
+    
+    /* === CANDIDAT LIBRE PAGE === */
+    .candidat-libre-section {
+        padding: var(--space-8) 0;
+    }
+    
+    /* === IMAGE RESPONSIVE === */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* === TABLE RESPONSIVE === */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* === PREVENT TEXT OVERFLOW === */
+    .hero-title,
+    .section-title,
+    .page-title,
+    .model-title {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+}
+
+/* === LANDSCAPE ORIENTATION ADJUSTMENTS === */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: var(--space-8) 0;
+    }
+    
+    .vehicle-hero-section {
+        min-height: auto;
+        padding: var(--space-8) 0;
+    }
+    
+    .nav-menu {
+        height: 100vh;
+        overflow-y: auto;
+    }
+}
+
+/* === TABLET LANDSCAPE (768px - 1024px) === */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .pricing-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .pricing-card:last-child {
+        grid-column: span 2;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .specs-grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* === VERY LARGE SCREENS (> 1440px) === */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .hero-title {
+        font-size: var(--text-6xl);
+    }
+    
+    .section-title-large {
+        font-size: 3.5rem;
+    }
+}
