@@ -1952,12 +1952,12 @@ body {
     }
     
     .concept-image img {
-        width: 100%; /* Taille normale pour mobile */
-        height: 100%;
+        width: 130%; /* Agrandie à 130% pour mobile */
+        height: 130%;
         object-fit: contain;
         object-position: center;
         transform: scale(1) !important;
-        margin: 0; /* Pas de débordement */
+        margin: -15%; /* Compense l'agrandissement pour centrer */
     }
     
     .concept-text p {
