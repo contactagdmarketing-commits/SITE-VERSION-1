@@ -1944,20 +1944,21 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        overflow: hidden; /* Empêche l'image de déborder */
+        overflow: hidden; /* Cache les marges de l'image */
         padding: 0;
-        border-radius: var(--radius-xl);
+        margin: 0 calc(-1 * var(--space-6)); /* Déborde sur les marges du container */
+        border-radius: 0;
         box-shadow: none;
         aspect-ratio: 4 / 3;
     }
     
     .concept-image img {
-        width: 130%; /* Agrandie à 130% pour mobile */
-        height: 130%;
+        width: 195%; /* 130% + 50% de zoom pour compenser les marges internes */
+        height: 195%;
         object-fit: contain;
         object-position: center;
         transform: scale(1) !important;
-        margin: -15%; /* Compense l'agrandissement pour centrer */
+        margin: -47.5%; /* Compense l'agrandissement pour centrer */
     }
     
     .concept-text p {
