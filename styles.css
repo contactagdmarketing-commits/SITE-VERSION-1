@@ -1953,12 +1953,12 @@ body {
     }
     
     .concept-image img {
-        width: 245%; /* Zoom encore plus important pour éliminer toutes les marges */
-        height: 245%;
+        width: 270%; /* Zoom augmenté de 25% supplémentaires */
+        height: 270%;
         object-fit: contain;
         object-position: center;
         transform: scale(1) !important;
-        margin: -72.5%; /* Compense l'agrandissement pour centrer */
+        margin: -85%; /* Compense l'agrandissement pour centrer */
     }
     
     .concept-text p {
