@@ -1944,19 +1944,20 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        overflow: visible !important; /* Permet de voir l'image agrandie */
-        padding: var(--space-8);
-        border-radius: 0;
+        overflow: hidden; /* Empêche l'image de déborder */
+        padding: 0;
+        border-radius: var(--radius-xl);
         box-shadow: none;
+        aspect-ratio: 4 / 3;
     }
     
     .concept-image img {
-        width: 75%; /* 150% (desktop) * 0.5 = 75% pour mobile */
-        height: 75%;
+        width: 100%; /* Taille normale pour mobile */
+        height: 100%;
         object-fit: contain;
         object-position: center;
         transform: scale(1) !important;
-        margin: -12.5%; /* Pour centrer l'image réduite */
+        margin: 0; /* Pas de débordement */
     }
     
     .concept-text p {
