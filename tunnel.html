@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trouvez votre formule - Candidalib</title>
+    <meta name="description" content="Répondez à quelques questions pour trouver la formule Candidalib adaptée à vos besoins.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .tunnel-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 50%, var(--primary-900) 100%);
+            padding: var(--space-8) var(--space-4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tunnel-card {
+            background: white;
+            border-radius: var(--radius-3xl);
+            box-shadow: var(--shadow-2xl);
+            max-width: 800px;
+            width: 100%;
+            padding: var(--space-10);
+            margin: 0 auto;
+        }
+        
+        .tunnel-header {
+            text-align: center;
+            margin-bottom: var(--space-10);
+        }
+        
+        .tunnel-header h1 {
+            font-size: var(--text-4xl);
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: var(--space-3);
+        }
+        
+        .tunnel-header p {
+            color: var(--text-secondary);
+            font-size: var(--text-lg);
+        }
+        
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-8);
+        }
+        
+        .step-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--neutral-300);
+            transition: all var(--transition-base);
+        }
+        
+        .step-dot.active {
+            background: var(--primary-600);
+            transform: scale(1.3);
+        }
+        
+        .step-dot.completed {
+            background: var(--success);
+        }
+        
+        .tunnel-step {
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            display: none;
+        }
+        
+        .tunnel-step.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+            display: block;
+        }
+        
+        .step-question {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--primary-900);
+            margin-bottom: var(--space-6);
+            text-align: center;
+        }
+        
+        .step-description {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-8);
+            font-size: var(--text-base);
+        }
+        
+        .options-grid {
+            display: grid;
+            gap: var(--space-4);
+            margin-bottom: var(--space-8);
+        }
+        
+        .option-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+            padding: var(--space-6);
+            border-radius: var(--radius-2xl);
+            border: 2px solid var(--neutral-200);
+            background: white;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        
+        .option-card input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+        
+        .option-card:hover {
+            border-color: var(--primary-400);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .option-card.selected {
+            border-color: var(--primary-600);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(16, 185, 129, 0.05));
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .option-title {
+            font-weight: 700;
+            color: var(--primary-900);
+            font-size: var(--text-lg);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .option-description {
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tunnel-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-4);
+            margin-top: var(--space-8);
+        }
+        
+        .btn-tunnel {
+            padding: var(--space-3) var(--space-6);
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+        
+        .btn-tunnel-secondary {
+            background: transparent;
+            border: 2px solid var(--neutral-300);
+            color: var(--text-secondary);
+        }
+        
+        .btn-tunnel-secondary:hover {
+            border-color: var(--primary-400);
+            color: var(--primary-600);
+        }
+        
+        .btn-tunnel-primary {
+            background: var(--primary-600);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-tunnel-primary:hover {
+            background: var(--primary-700);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-tunnel-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        @media (max-width: 768px) {
+            .tunnel-card {
+                padding: var(--space-6);
+            }
+            
+            .tunnel-header h1 {
+                font-size: var(--text-2xl);
+            }
+            
+            .step-question {
+                font-size: var(--text-xl);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="index.html" class="logo">
+                        <img src="assets/logocandi.jpg" alt="Candidalib" class="logo-img">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Tunnel Container -->
+    <div class="tunnel-container">
+        <div class="tunnel-card">
+            <div class="tunnel-header">
+                <h1>Trouvez votre formule idéale</h1>
+                <p>Répondez à quelques questions pour découvrir l'offre adaptée à vos besoins</p>
+            </div>
+
+            <!-- Step Indicator -->
+            <div class="step-indicator">
+                <div class="step-dot active" data-step-dot="0"></div>
+                <div class="step-dot" data-step-dot="1"></div>
+                <div class="step-dot" data-step-dot="2"></div>
+            </div>
+
+            <!-- Form -->
+            <form id="tunnel-form">
+                <!-- ÉTAPE 0 : Situation de base -->
+                <div class="tunnel-step active" data-step="0">
+                    <h2 class="step-question">Où en êtes-vous ?</h2>
+                    <p class="step-description">Choisissez votre situation</p>
+                    
+                    <div class="options-grid">
+                        <label class="option-card">
+                            <input type="radio" name="base" value="passer" required>
+                            <span class="option-title">Je souhaite passer mon permis</span>
+                            <span class="option-description">Je n'ai pas encore le permis de conduire</span>
+                        </label>
+                        
+                        <label class="option-card">
+                            <input type="radio" name="base" value="ai-permis" required>
+                            <span class="option-title">J'ai déjà mon permis</span>
+                            <span class="option-description">J'ai besoin d'une remise à niveau</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Étapes dynamiques générées par JavaScript -->
+                <div id="dynamic-steps"></div>
+            </form>
+
+                <!-- Navigation -->
+                <div class="tunnel-navigation">
+                    <button type="button" id="btn-prev" class="btn-tunnel btn-tunnel-secondary" style="display: none;">
+                        ← Précédent
+                    </button>
+                    <div style="flex: 1;"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('tunnel-form');
+        const dynamicSteps = document.getElementById('dynamic-steps');
+        const btnPrev = document.getElementById('btn-prev');
+        let currentStepIndex = 0;
+        let userChoices = {};
+        let stepsHistory = []; // Pour gérer le retour
+
+        // Arbre de décision
+        const flowTree = {
+            'passer': {
+                question: "Quelle est votre situation actuelle ?",
+                description: "Précisez votre parcours",
+                options: [
+                    { value: 'ai-auto-ecole', title: "J'ai déjà une auto-école", description: "Je suis inscrit dans une auto-école" },
+                    { value: 'pas-auto-ecole', title: "Non, je n'ai pas d'auto-école", description: "Je souhaite me former autrement" },
+                    { value: 'conduite-accompagnee', title: "Je suis en conduite accompagnée/supervisée sans accompagnateur", description: "J'ai besoin d'un accompagnateur équipé" }
+                ],
+                next: (choice) => {
+                    if (choice === 'ai-auto-ecole') return 'auto-ecole-action';
+                    if (choice === 'pas-auto-ecole') return 'pas-auto-ecole-detail';
+                    if (choice === 'conduite-accompagnee') return 'REDIRECT:index.html#conduite-accompagnee';
+                }
+            },
+            'auto-ecole-action': {
+                question: "Que souhaitez-vous faire ?",
+                description: "Choisissez votre besoin",
+                options: [
+                    { value: 'heures-supp', title: "Je souhaite faire des heures supplémentaires", description: "Complément à ma formation actuelle" },
+                    { value: 'transfert', title: "Je souhaite transférer mon dossier", description: "Changer d'établissement" }
+                ],
+                next: (choice) => {
+                    if (choice === 'heures-supp') return 'heures-deja-faites';
+                    if (choice === 'transfert') return 'REDIRECT:candidat-libre.html?action=transfert';
+                }
+            },
+            'heures-deja-faites': {
+                question: "Combien d'heures avez-vous déjà effectuées ?",
+                description: "Pour mieux vous orienter",
+                options: [
+                    { value: 'moins-20', title: "Moins de 20 heures", description: "Début de formation" },
+                    { value: 'plus-20', title: "Plus de 20 heures", description: "Formation avancée" }
+                ],
+                next: () => 'heures-besoin'
+            },
+            'heures-besoin': {
+                question: "Combien d'heures pensez-vous avoir besoin ?",
+                description: "Choisissez votre formule",
+                options: [
+                    { value: '1-5', title: "Entre 1 et 5 heures", description: "Quelques sessions de perfectionnement" },
+                    { value: '5-10', title: "Entre 5 et 10 heures", description: "Programme de préparation" },
+                    { value: 'plus-10', title: "Plus de 10 heures", description: "Formation complète" }
+                ],
+                next: (choice) => {
+                    if (choice === '1-5') return 'REDIRECT:index.html?highlight=session#tarifs';
+                    if (choice === '5-10') return 'REDIRECT:index.html?highlight=forfait10h#tarifs';
+                    if (choice === 'plus-10') return 'REDIRECT:index.html?highlight=forfait10h#tarifs';
+                }
+            },
+            'pas-auto-ecole-detail': {
+                question: "Précisez votre situation",
+                description: "Pour vous orienter au mieux",
+                options: [
+                    { value: 'premiere-fois', title: "Je passe mon permis pour la première fois", description: "Candidat libre complet" },
+                    { value: 'deja-passe', title: "J'ai déjà passé mon permis", description: "Repassage ou remise à niveau" }
+                ],
+                next: (choice) => {
+                    if (choice === 'premiere-fois') return 'REDIRECT:candidat-libre.html?action=contact';
+                    if (choice === 'deja-passe') return 'deja-passe-detail';
+                }
+            },
+            'deja-passe-detail': {
+                question: "Quel est votre besoin ?",
+                description: "Choisissez votre objectif",
+                options: [
+                    { value: 'repasser', title: "Je dois le repasser", description: "Récupérer mon permis" },
+                    { value: 'remise-niveau', title: "Je souhaite une remise à niveau", description: "Reprendre confiance au volant" }
+                ],
+                next: () => 'REDIRECT:index.html?highlight=forfait10h#tarifs'
+            }
+        };
+
+        // Générer une étape
+        function generateStep(stepKey) {
+            const stepData = flowTree[stepKey];
+            if (!stepData) return null;
+
+            const stepHTML = `
+                <div class="tunnel-step active" data-step-key="${stepKey}">
+                    <h2 class="step-question">${stepData.question}</h2>
+                    <p class="step-description">${stepData.description}</p>
+                    <div class="options-grid">
+                        ${stepData.options.map(opt => `
+                            <label class="option-card">
+                                <input type="radio" name="${stepKey}" value="${opt.value}" required>
+                                <span class="option-title">${opt.title}</span>
+                                <span class="option-description">${opt.description}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            
+            dynamicSteps.innerHTML = stepHTML;
+            setupOptionListeners();
+        }
+
+        // Gérer les écouteurs d'options (pour les étapes dynamiques)
+        function setupOptionListeners() {
+            const allOptions = document.querySelectorAll('#dynamic-steps .option-card input');
+            allOptions.forEach(input => {
+                input.addEventListener('change', () => {
+                    document.querySelectorAll(`input[name="${input.name}"]`).forEach(i => {
+                        i.closest('.option-card').classList.toggle('selected', i === input);
+                    });
+                    userChoices[input.name] = input.value;
+                    
+                    // Avancer automatiquement après un court délai
+                    setTimeout(() => {
+                        goToNextStep();
+                    }, 400); // Délai de 400ms pour voir la sélection
+                });
+            });
+        }
+
+        // Mettre à jour l'affichage du bouton précédent
+        function updatePrevButton() {
+            btnPrev.style.display = currentStepIndex === 0 ? 'none' : 'block';
+        }
+
+        // Naviguer vers la prochaine étape
+        function goToNextStep() {
+            // Chercher l'étape active dans le conteneur dynamique
+            const currentStep = document.querySelector('#dynamic-steps .tunnel-step.active');
+            if (!currentStep) {
+                console.error('Aucune étape active trouvée');
+                return;
+            }
+            
+            const stepKey = currentStep.dataset.stepKey;
+            
+            // Récupérer le choix actuel
+            const currentChoice = userChoices[stepKey];
+            
+            // Déterminer la prochaine étape
+            const stepData = flowTree[stepKey];
+            const nextKey = stepData ? stepData.next(currentChoice) : null;
+            
+            console.log('Step:', stepKey, 'Choice:', currentChoice, 'Next:', nextKey);
+            
+            // Gérer les redirections
+            if (nextKey && nextKey.startsWith('REDIRECT:')) {
+                const url = nextKey.replace('REDIRECT:', '');
+                window.location.href = url;
+                return;
+            }
+            
+            // Ajouter à l'historique
+            stepsHistory.push(stepKey);
+            
+            // Masquer l'étape actuelle
+            currentStep.classList.remove('active');
+            
+            // Générer et afficher la nouvelle étape
+            if (nextKey) {
+                generateStep(nextKey);
+                currentStepIndex++;
+                updateStepIndicators();
+                updatePrevButton();
+            }
+        }
+
+        // Retour en arrière
+        function goToPreviousStep() {
+            if (stepsHistory.length === 0) {
+                // Retour à l'étape 0
+                const allSteps = Array.from(document.querySelectorAll('.tunnel-step'));
+                allSteps.forEach(s => s.classList.remove('active'));
+                allSteps[0].classList.add('active');
+                currentStepIndex = 0;
+                dynamicSteps.innerHTML = '';
+            } else {
+                // Retour à l'étape précédente
+                const previousKey = stepsHistory.pop();
+                const allSteps = Array.from(document.querySelectorAll('.tunnel-step'));
+                allSteps.forEach(s => s.classList.remove('active'));
+                
+                if (stepsHistory.length === 0) {
+                    allSteps[0].classList.add('active');
+                    currentStepIndex = 0;
+                    dynamicSteps.innerHTML = '';
+                } else {
+                    generateStep(previousKey);
+                    currentStepIndex--;
+                }
+            }
+            updateStepIndicators();
+            updatePrevButton();
+        }
+
+        // Mettre à jour les indicateurs
+        function updateStepIndicators() {
+            const stepDots = Array.from(document.querySelectorAll('.step-dot'));
+            stepDots.forEach((dot, index) => {
+                dot.classList.remove('active', 'completed');
+                if (index < currentStepIndex) {
+                    dot.classList.add('completed');
+                } else if (index === currentStepIndex) {
+                    dot.classList.add('active');
+                }
+            });
+        }
+
+        // Gérer le premier choix
+        document.querySelectorAll('input[name="base"]').forEach(input => {
+            input.addEventListener('change', () => {
+                document.querySelectorAll('input[name="base"]').forEach(i => {
+                    i.closest('.option-card').classList.toggle('selected', i === input);
+                });
+                userChoices.base = input.value;
+                
+                // Avancer automatiquement après un court délai
+                setTimeout(() => {
+                    const baseChoice = userChoices.base;
+                    if (baseChoice === 'ai-permis') {
+                        window.location.href = 'index.html#remise-niveau';
+                    } else if (baseChoice === 'passer') {
+                        stepsHistory.push('base');
+                        generateStep('passer');
+                        currentStepIndex++;
+                        updateStepIndicators();
+                        updatePrevButton();
+                    }
+                }, 400);
+            });
+        });
+
+        // Événement bouton précédent
+        btnPrev.addEventListener('click', goToPreviousStep);
+
+        // Initialisation au chargement de la page
+        window.addEventListener('DOMContentLoaded', () => {
+            setupOptionListeners();
+            updatePrevButton();
+        });
+    </script>
+</body>
+</html>

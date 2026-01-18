@@ -102,6 +102,22 @@
         </div>
     </section>
 
+    <!-- CTA Section (conditionnelle selon paramètres URL) -->
+    <section id="special-cta" style="display: none; padding: var(--space-20) 0; background: linear-gradient(135deg, var(--primary-600), var(--primary-700)); text-align: center;">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto; color: white;">
+                <h2 id="cta-title" style="font-size: var(--text-4xl); font-weight: 800; margin-bottom: var(--space-4);"></h2>
+                <p id="cta-description" style="font-size: var(--text-lg); margin-bottom: var(--space-8); opacity: 0.9;"></p>
+                <a id="cta-button" href="contact.html" class="btn btn-primary btn-lg" style="background: white; color: var(--primary-600); display: inline-flex; align-items: center; gap: var(--space-3);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span id="cta-button-text"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -140,5 +156,22 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Gérer les paramètres URL pour afficher le CTA spécial
+        const urlParams = new URLSearchParams(window.location.search);
+        const action = urlParams.get('action');
+        
+        if (action === 'transfert') {
+            document.getElementById('special-cta').style.display = 'block';
+            document.getElementById('cta-title').textContent = 'Besoin d\'aide pour votre transfert ?';
+            document.getElementById('cta-description').textContent = 'Notre équipe vous accompagne dans le transfert de votre dossier. Contactez-nous pour un accompagnement personnalisé.';
+            document.getElementById('cta-button-text').textContent = 'Contactez-nous pour votre transfert';
+        } else if (action === 'contact') {
+            document.getElementById('special-cta').style.display = 'block';
+            document.getElementById('cta-title').textContent = 'Besoin de conseils pour démarrer ?';
+            document.getElementById('cta-description').textContent = 'Vous passez votre permis pour la première fois en candidat libre ? Notre équipe est là pour vous guider.';
+            document.getElementById('cta-button-text').textContent = 'Appelez-nous maintenant';
+        }
+    </script>
 </body>
 </html>
