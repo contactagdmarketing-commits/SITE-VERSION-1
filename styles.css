@@ -1011,7 +1011,7 @@ body {
     border: 2px solid var(--neutral-300);
     border-radius: var(--radius-full);
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.47rem;
     color: var(--text-secondary);
     cursor: pointer;
     transition: all var(--transition-base);
@@ -2164,7 +2164,7 @@ body {
     .exam-tab {
         width: 100%;
         padding: var(--space-3) var(--space-4);
-        font-size: 1.3125rem;
+        font-size: 1.286rem;
     }
     
     .exam-content {
