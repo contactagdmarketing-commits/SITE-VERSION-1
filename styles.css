@@ -588,14 +588,12 @@ body {
 }
 
 .concept-image img {
-    /* ZOOM de 150% (100% initial + 50% augmentation) */
-    width: 150%;
-    height: 150%;
-    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     object-position: center;
     transition: transform var(--transition-slow);
-    /* Compensation pour centrer l'image agrandie */
-    margin: -25%;
+    margin: 0;
 }
 
 .concept-image:hover img {
