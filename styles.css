@@ -902,14 +902,14 @@ body {
 
 .concept-illustration {
     width: 100%;
-    border-radius: var(--radius-xl);
+    border-radius: 50%;
     overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     background: transparent;
-    aspect-ratio: 4/3;
+    aspect-ratio: 1;
     z-index: auto;
 }
 
@@ -923,7 +923,7 @@ body {
     object-position: center;
     
     display: block;
-    border-radius: var(--radius-xl);
+    border-radius: 50%;
     transition: transform var(--transition-smooth);
     
     /* Pas de marge négative */
