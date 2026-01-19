@@ -1003,7 +1003,7 @@ body {
 }
 
 .exam-section .section-title {
-    font-size: var(--text-6xl);
+    font-size: 3rem;
 }
 
 .exam-tabs {
@@ -2408,7 +2408,7 @@ body {
     
     /* Exam Section */
     .exam-section .section-title {
-        font-size: var(--text-4xl);
+        font-size: 1.6875rem;
     }
     
     .exam-tabs {
