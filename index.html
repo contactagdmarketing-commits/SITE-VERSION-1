@@ -87,7 +87,7 @@
                 <p class="section-intro">Des tarifs transparents, sans surprise</p>
             </div>
             <div class="pricing-cards">
-                <div class="pricing-card">
+                <div class="pricing-card clickable-card" onclick="window.location.href='contact.html'">
                     <div class="card-badge">1H</div>
                     <div class="card-icon"><img src="assets/logo-tortue.svg" alt="Tortue" style="width: 155%; height: 155%; object-fit: contain; transform: translateX(-2%) translateY(1%);"></div>
                     <h3 class="card-title">Session d'une heure</h3>
@@ -99,7 +99,7 @@
                     </ul>
                     <p class="card-description">Idéal pour des séances ponctuelles de perfectionnement</p>
                 </div>
-                <div class="pricing-card featured">
+                <div class="pricing-card featured clickable-card" onclick="window.location.href='contact.html'">
                     <div class="card-badge">Formule 10H</div>
                     <div class="card-icon"><img src="assets/logo-lievre.svg" alt="Lièvre" style="width: 217%; height: 217%; object-fit: contain; transform: translateX(3%);"></div>
                     <h3 class="card-title">Forfait 10 heures</h3>
@@ -112,7 +112,7 @@
                     </ul>
                     <p class="card-description">Économisez avec notre forfait le plus avantageux</p>
                 </div>
-                <div class="pricing-card">
+                <div class="pricing-card clickable-card" onclick="window.location.href='contact.html'">
                     <div class="card-badge">EXAMEN</div>
                     <div class="card-icon"><img src="assets/logo-examen.svg" alt="Examen" style="width: 150%; height: 150%; object-fit: contain;"></div>
                     <h3 class="card-title">Présentation à l'examen</h3>
@@ -327,7 +327,65 @@
                 }, 300);
             }
         });
+    </script>
 
+    <!-- Tunnel Modal Pop-up -->
+    <div id="tunnel-modal" class="tunnel-modal">
+        <div class="tunnel-modal-overlay"></div>
+        <div class="tunnel-modal-content">
+            <button class="tunnel-modal-close" id="close-tunnel">&times;</button>
+            
+            <div class="tunnel-card-modal">
+                <div class="tunnel-header">
+                    <h1>Trouvez votre formule idéale</h1>
+                    <p>Répondez à quelques questions pour découvrir l'offre adaptée à vos besoins</p>
+                </div>
+
+                <!-- Step Indicator -->
+                <div class="step-indicator">
+                    <div class="step-dot active" data-step-dot="0"></div>
+                    <div class="step-dot" data-step-dot="1"></div>
+                    <div class="step-dot" data-step-dot="2"></div>
+                </div>
+
+                <!-- Form -->
+                <form id="tunnel-form-modal">
+                    <!-- ÉTAPE 0 : Situation de base -->
+                    <div class="tunnel-step active" data-step="0">
+                        <h2 class="step-question">Où en êtes-vous ?</h2>
+                        <p class="step-description">Choisissez votre situation</p>
+                        
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="base" value="passer" required>
+                                <span class="option-title">Je souhaite passer mon permis</span>
+                                <span class="option-description">Je n'ai pas encore le permis de conduire</span>
+                            </label>
+                            
+                            <label class="option-card">
+                                <input type="radio" name="base" value="ai-permis" required>
+                                <span class="option-title">J'ai déjà mon permis</span>
+                                <span class="option-description">J'ai besoin d'une remise à niveau</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Étapes dynamiques générées par JavaScript -->
+                    <div id="dynamic-steps-modal"></div>
+                </form>
+
+                <!-- Navigation -->
+                <div class="tunnel-navigation">
+                    <button type="button" id="btn-prev-modal" class="btn-tunnel btn-tunnel-secondary" style="display: none;">
+                        ← Précédent
+                    </button>
+                    <div style="flex: 1;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
         // ==========================================
         // TUNNEL MODAL - GESTION
         // ==========================================
@@ -338,18 +396,27 @@
         // Ouvrir la modale
         function openTunnelModal() {
             tunnelModal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Bloquer le scroll du body
+            document.body.style.overflow = 'hidden';
         }
 
         // Fermer la modale
         function closeTunnelModal() {
             tunnelModal.classList.remove('active');
-            document.body.style.overflow = ''; // Restaurer le scroll
+            document.body.style.overflow = '';
+            // Marquer que la modale a été fermée pour cette session
+            sessionStorage.setItem('tunnelClosed', 'true');
         }
 
         // Ouvrir automatiquement au chargement de la page
         window.addEventListener('DOMContentLoaded', function() {
-            openTunnelModal();
+            // Ne pas ouvrir si la modale a déjà été fermée dans cette session
+            // OU s'il y a un hash/query dans l'URL (redirection du tunnel)
+            const wasClosed = sessionStorage.getItem('tunnelClosed');
+            const hasUrlParams = window.location.hash || window.location.search;
+            
+            if (!wasClosed && !hasUrlParams) {
+                openTunnelModal();
+            }
         });
 
         // Fermer avec le bouton X
@@ -569,6 +636,12 @@
                         closeTunnelModal();
                         window.location.href = 'index.html#remise-niveau';
                     } else if (baseChoice === 'passer') {
+                        // Masquer la première étape
+                        const firstStep = document.querySelector('#tunnel-form-modal .tunnel-step[data-step="0"]');
+                        if (firstStep) {
+                            firstStep.classList.remove('active');
+                        }
+                        
                         stepsHistoryModal.push('base');
                         generateStepModal('passer');
                         currentStepIndexModal++;
@@ -582,62 +655,6 @@
         // Bouton précédent
         btnPrevModal.addEventListener('click', goToPreviousStepModal);
     </script>
-
-    <!-- Tunnel Modal Pop-up -->
-    <div id="tunnel-modal" class="tunnel-modal">
-        <div class="tunnel-modal-overlay"></div>
-        <div class="tunnel-modal-content">
-            <button class="tunnel-modal-close" id="close-tunnel">&times;</button>
-            
-            <div class="tunnel-card-modal">
-                <div class="tunnel-header">
-                    <h1>Trouvez votre formule idéale</h1>
-                    <p>Répondez à quelques questions pour découvrir l'offre adaptée à vos besoins</p>
-                </div>
-
-                <!-- Step Indicator -->
-                <div class="step-indicator">
-                    <div class="step-dot active" data-step-dot="0"></div>
-                    <div class="step-dot" data-step-dot="1"></div>
-                    <div class="step-dot" data-step-dot="2"></div>
-                </div>
-
-                <!-- Form -->
-                <form id="tunnel-form-modal">
-                    <!-- ÉTAPE 0 : Situation de base -->
-                    <div class="tunnel-step active" data-step="0">
-                        <h2 class="step-question">Où en êtes-vous ?</h2>
-                        <p class="step-description">Choisissez votre situation</p>
-                        
-                        <div class="options-grid">
-                            <label class="option-card">
-                                <input type="radio" name="base" value="passer" required>
-                                <span class="option-title">Je souhaite passer mon permis</span>
-                                <span class="option-description">Je n'ai pas encore le permis de conduire</span>
-                            </label>
-                            
-                            <label class="option-card">
-                                <input type="radio" name="base" value="ai-permis" required>
-                                <span class="option-title">J'ai déjà mon permis</span>
-                                <span class="option-description">J'ai besoin d'une remise à niveau</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Étapes dynamiques générées par JavaScript -->
-                    <div id="dynamic-steps-modal"></div>
-                </form>
-
-                <!-- Navigation -->
-                <div class="tunnel-navigation">
-                    <button type="button" id="btn-prev-modal" class="btn-tunnel btn-tunnel-secondary" style="display: none;">
-                        ← Précédent
-                    </button>
-                    <div style="flex: 1;"></div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>

@@ -643,6 +643,15 @@ body {
     overflow: hidden;
 }
 
+.pricing-card.clickable-card {
+    cursor: pointer;
+}
+
+.pricing-card.clickable-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
+}
+
 .pricing-card::before {
     content: '';
     position: absolute;
