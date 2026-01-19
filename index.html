@@ -38,7 +38,7 @@
             <div class="container">
                 <div class="floating-cta-content">
                     <span class="floating-cta-text">Prêt à commencer ?</span>
-                    <a href="contact.html" class="btn btn-primary">Prendre rendez-vous</a>
+                    <a href="tunnel.html" class="btn btn-primary">Prendre rendez-vous</a>
                 </div>
             </div>
         </div>
@@ -211,7 +211,7 @@
     <section class="exam-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Et pour l'examen ?</h2>
+                <h2 class="section-title">vous aller bientôt passer votre examen ?</h2>
             </div>
             <div class="exam-tabs">
                 <button class="exam-tab active" data-tab="no-date">Vous n'avez pas encore de date d'examen</button>
@@ -327,7 +327,318 @@
                 }, 300);
             }
         });
+
+        // ==========================================
+        // TUNNEL MODAL - GESTION
+        // ==========================================
+        const tunnelModal = document.getElementById('tunnel-modal');
+        const closeTunnelBtn = document.getElementById('close-tunnel');
+        const modalOverlay = document.querySelector('.tunnel-modal-overlay');
+
+        // Ouvrir la modale
+        function openTunnelModal() {
+            tunnelModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Bloquer le scroll du body
+        }
+
+        // Fermer la modale
+        function closeTunnelModal() {
+            tunnelModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restaurer le scroll
+        }
+
+        // Ouvrir automatiquement au chargement de la page
+        window.addEventListener('DOMContentLoaded', function() {
+            openTunnelModal();
+        });
+
+        // Fermer avec le bouton X
+        closeTunnelBtn.addEventListener('click', closeTunnelModal);
+
+        // Fermer en cliquant sur l'overlay
+        modalOverlay.addEventListener('click', closeTunnelModal);
+
+        // Modifier tous les boutons "Prendre rendez-vous" pour ouvrir la modale
+        document.querySelectorAll('a[href="tunnel.html"], a[href*="tunnel.html"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                openTunnelModal();
+            });
+        });
+
+        // ==========================================
+        // TUNNEL LOGIC - ARBRE DE DÉCISION
+        // ==========================================
+        const formModal = document.getElementById('tunnel-form-modal');
+        const dynamicStepsModal = document.getElementById('dynamic-steps-modal');
+        const btnPrevModal = document.getElementById('btn-prev-modal');
+        let currentStepIndexModal = 0;
+        let userChoicesModal = {};
+        let stepsHistoryModal = [];
+
+        // Arbre de décision complet
+        const flowTreeModal = {
+            'passer': {
+                question: "Quelle est votre situation actuelle ?",
+                description: "Précisez votre parcours",
+                options: [
+                    { value: 'ai-auto-ecole', title: "J'ai déjà une auto-école", description: "Je suis inscrit dans une auto-école" },
+                    { value: 'pas-auto-ecole', title: "Non, je n'ai pas d'auto-école", description: "Je souhaite me former autrement" },
+                    { value: 'conduite-accompagnee', title: "Je suis en conduite accompagnée/supervisée sans accompagnateur", description: "J'ai besoin d'un accompagnateur équipé" }
+                ],
+                next: (choice) => {
+                    if (choice === 'ai-auto-ecole') return 'auto-ecole-action';
+                    if (choice === 'pas-auto-ecole') return 'pas-auto-ecole-detail';
+                    if (choice === 'conduite-accompagnee') return 'REDIRECT:index.html#conduite-accompagnee';
+                }
+            },
+            'auto-ecole-action': {
+                question: "Que souhaitez-vous faire ?",
+                description: "Choisissez votre besoin",
+                options: [
+                    { value: 'heures-supp', title: "Je souhaite faire des heures supplémentaires", description: "Complément à ma formation actuelle" },
+                    { value: 'transfert', title: "Je souhaite transférer mon dossier", description: "Changer d'établissement" }
+                ],
+                next: (choice) => {
+                    if (choice === 'heures-supp') return 'heures-deja-faites';
+                    if (choice === 'transfert') return 'REDIRECT:candidat-libre.html?action=transfert';
+                }
+            },
+            'heures-deja-faites': {
+                question: "Combien d'heures avez-vous déjà effectuées ?",
+                description: "Pour mieux vous orienter",
+                options: [
+                    { value: 'moins-20', title: "Moins de 20 heures", description: "Début de formation" },
+                    { value: 'plus-20', title: "Plus de 20 heures", description: "Formation avancée" }
+                ],
+                next: () => 'heures-besoin'
+            },
+            'heures-besoin': {
+                question: "Combien d'heures pensez-vous avoir besoin ?",
+                description: "Choisissez votre formule",
+                options: [
+                    { value: '1-5', title: "Entre 1 et 5 heures", description: "Quelques sessions de perfectionnement" },
+                    { value: '5-10', title: "Entre 5 et 10 heures", description: "Programme de préparation" },
+                    { value: 'plus-10', title: "Plus de 10 heures", description: "Formation complète" }
+                ],
+                next: (choice) => {
+                    if (choice === '1-5') return 'REDIRECT:index.html?highlight=session#tarifs';
+                    return 'REDIRECT:index.html?highlight=forfait10h#tarifs';
+                }
+            },
+            'pas-auto-ecole-detail': {
+                question: "Souhaitez-vous être accompagné ?",
+                description: "Précisez votre besoin",
+                options: [
+                    { value: 'besoin-accompagnateur', title: "Oui, j'ai besoin d'un accompagnateur", description: "Je n'ai personne pour m'accompagner" },
+                    { value: 'ai-accompagnateur', title: "Non, j'ai déjà un accompagnateur", description: "Une personne peut m'accompagner" }
+                ],
+                next: (choice) => {
+                    if (choice === 'besoin-accompagnateur') return 'REDIRECT:contact.html';
+                    return 'REDIRECT:candidat-libre.html?action=contact';
+                }
+            }
+        };
+
+        // Générer une étape dynamique
+        function generateStepModal(stepKey) {
+            const stepData = flowTreeModal[stepKey];
+            if (!stepData) return;
+
+            const stepHTML = `
+                <div class="tunnel-step active" data-step-key="${stepKey}">
+                    <h2 class="step-question">${stepData.question}</h2>
+                    <p class="step-description">${stepData.description}</p>
+                    <div class="options-grid">
+                        ${stepData.options.map(opt => `
+                            <label class="option-card">
+                                <input type="radio" name="${stepKey}" value="${opt.value}" required>
+                                <span class="option-title">${opt.title}</span>
+                                <span class="option-description">${opt.description}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            dynamicStepsModal.innerHTML = stepHTML;
+            setupOptionListenersModal();
+        }
+
+        // Configurer les listeners pour les options
+        function setupOptionListenersModal() {
+            const dynamicInputs = dynamicStepsModal.querySelectorAll('input[type="radio"]');
+            dynamicInputs.forEach(input => {
+                input.addEventListener('change', () => {
+                    document.querySelectorAll(`input[name="${input.name}"]`).forEach(i => {
+                        i.closest('.option-card').classList.toggle('selected', i === input);
+                    });
+                    userChoicesModal[input.name] = input.value;
+                    
+                    setTimeout(() => {
+                        goToNextStepModal();
+                    }, 400);
+                });
+            });
+        }
+
+        // Naviguer vers la prochaine étape
+        function goToNextStepModal() {
+            const currentStep = document.querySelector('#dynamic-steps-modal .tunnel-step.active');
+            if (!currentStep) return;
+            
+            const stepKey = currentStep.dataset.stepKey;
+            const currentChoice = userChoicesModal[stepKey];
+            const stepData = flowTreeModal[stepKey];
+            const nextKey = stepData ? stepData.next(currentChoice) : null;
+            
+            // Gérer les redirections
+            if (nextKey && nextKey.startsWith('REDIRECT:')) {
+                const url = nextKey.replace('REDIRECT:', '');
+                closeTunnelModal();
+                window.location.href = url;
+                return;
+            }
+            
+            stepsHistoryModal.push(stepKey);
+            currentStep.classList.remove('active');
+            
+            if (nextKey) {
+                generateStepModal(nextKey);
+                currentStepIndexModal++;
+                updateStepIndicatorsModal();
+                updatePrevButtonModal();
+            }
+        }
+
+        // Retour en arrière
+        function goToPreviousStepModal() {
+            if (stepsHistoryModal.length === 0) {
+                const allSteps = Array.from(document.querySelectorAll('.tunnel-step'));
+                allSteps.forEach(s => s.classList.remove('active'));
+                allSteps[0].classList.add('active');
+                currentStepIndexModal = 0;
+                dynamicStepsModal.innerHTML = '';
+            } else {
+                const previousKey = stepsHistoryModal.pop();
+                const allSteps = Array.from(document.querySelectorAll('.tunnel-step'));
+                allSteps.forEach(s => s.classList.remove('active'));
+                
+                if (stepsHistoryModal.length === 0) {
+                    allSteps[0].classList.add('active');
+                    currentStepIndexModal = 0;
+                    dynamicStepsModal.innerHTML = '';
+                } else {
+                    generateStepModal(previousKey);
+                    currentStepIndexModal--;
+                }
+            }
+            updateStepIndicatorsModal();
+            updatePrevButtonModal();
+        }
+
+        // Mettre à jour les indicateurs
+        function updateStepIndicatorsModal() {
+            const stepDots = Array.from(document.querySelectorAll('#tunnel-modal .step-dot'));
+            stepDots.forEach((dot, index) => {
+                dot.classList.remove('active', 'completed');
+                if (index < currentStepIndexModal) {
+                    dot.classList.add('completed');
+                } else if (index === currentStepIndexModal) {
+                    dot.classList.add('active');
+                }
+            });
+        }
+
+        // Mettre à jour le bouton précédent
+        function updatePrevButtonModal() {
+            btnPrevModal.style.display = currentStepIndexModal === 0 ? 'none' : 'block';
+        }
+
+        // Gérer le premier choix
+        document.querySelectorAll('#tunnel-form-modal input[name="base"]').forEach(input => {
+            input.addEventListener('change', () => {
+                document.querySelectorAll('#tunnel-form-modal input[name="base"]').forEach(i => {
+                    i.closest('.option-card').classList.toggle('selected', i === input);
+                });
+                userChoicesModal.base = input.value;
+                
+                setTimeout(() => {
+                    const baseChoice = userChoicesModal.base;
+                    if (baseChoice === 'ai-permis') {
+                        closeTunnelModal();
+                        window.location.href = 'index.html#remise-niveau';
+                    } else if (baseChoice === 'passer') {
+                        stepsHistoryModal.push('base');
+                        generateStepModal('passer');
+                        currentStepIndexModal++;
+                        updateStepIndicatorsModal();
+                        updatePrevButtonModal();
+                    }
+                }, 400);
+            });
+        });
+
+        // Bouton précédent
+        btnPrevModal.addEventListener('click', goToPreviousStepModal);
     </script>
+
+    <!-- Tunnel Modal Pop-up -->
+    <div id="tunnel-modal" class="tunnel-modal">
+        <div class="tunnel-modal-overlay"></div>
+        <div class="tunnel-modal-content">
+            <button class="tunnel-modal-close" id="close-tunnel">&times;</button>
+            
+            <div class="tunnel-card-modal">
+                <div class="tunnel-header">
+                    <h1>Trouvez votre formule idéale</h1>
+                    <p>Répondez à quelques questions pour découvrir l'offre adaptée à vos besoins</p>
+                </div>
+
+                <!-- Step Indicator -->
+                <div class="step-indicator">
+                    <div class="step-dot active" data-step-dot="0"></div>
+                    <div class="step-dot" data-step-dot="1"></div>
+                    <div class="step-dot" data-step-dot="2"></div>
+                </div>
+
+                <!-- Form -->
+                <form id="tunnel-form-modal">
+                    <!-- ÉTAPE 0 : Situation de base -->
+                    <div class="tunnel-step active" data-step="0">
+                        <h2 class="step-question">Où en êtes-vous ?</h2>
+                        <p class="step-description">Choisissez votre situation</p>
+                        
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="base" value="passer" required>
+                                <span class="option-title">Je souhaite passer mon permis</span>
+                                <span class="option-description">Je n'ai pas encore le permis de conduire</span>
+                            </label>
+                            
+                            <label class="option-card">
+                                <input type="radio" name="base" value="ai-permis" required>
+                                <span class="option-title">J'ai déjà mon permis</span>
+                                <span class="option-description">J'ai besoin d'une remise à niveau</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Étapes dynamiques générées par JavaScript -->
+                    <div id="dynamic-steps-modal"></div>
+                </form>
+
+                <!-- Navigation -->
+                <div class="tunnel-navigation">
+                    <button type="button" id="btn-prev-modal" class="btn-tunnel btn-tunnel-secondary" style="display: none;">
+                        ← Précédent
+                    </button>
+                    <div style="flex: 1;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
