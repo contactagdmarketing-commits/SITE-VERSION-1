@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Voiture double commande à Toulouse – Candidat libre pas cher</title>
-  <meta name="description" content="Auto-école complète ou trop chère ? Louez une voiture double commande à Toulouse avec accompagnateur qualifié pour passer le permis en candidat libre. Appelez-nous.">
+  <meta name="description" content="Auto-école complète ou trop chère ? Conduisez avec une voiture double commande à Toulouse avec accompagnateur qualifié pour passer le permis en candidat libre. Appelez-nous.">
   
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <style>
     * {
@@ -15,458 +15,953 @@
       box-sizing: border-box;
     }
     
+    html {
+      scroll-behavior: smooth;
+    }
+    
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: #0f172a;
-      line-height: 1.7;
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+      line-height: 1.6;
       background: #fff;
     }
     
     .container {
-      max-width: 1200px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 30px;
     }
     
-    /* HERO SECTION */
+    /* HERO */
     .hero {
-      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+      background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
       color: white;
-      padding: 80px 0 120px;
+      padding: 100px 0 100px;
       position: relative;
       overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(147,197,253,0.15), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: pulse 4s ease-in-out infinite;
     }
     
     .hero::after {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100px;
-      background: white;
-      clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+      bottom: -30%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(59,130,246,0.2), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .hero .container {
+      position: relative;
+      z-index: 1;
     }
     
     .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
+      text-align: left;
     }
     
-    .hero-badge {
+    .badge {
       display: inline-block;
       background: rgba(255,255,255,0.2);
       backdrop-filter: blur(10px);
-      padding: 8px 20px;
+      padding: 8px 18px;
       border-radius: 50px;
-      font-size: 0.875rem;
+      font-size: 12px;
       font-weight: 600;
-      margin-bottom: 24px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
     }
     
     h1 {
-      font-size: 3.5rem;
+      font-size: 48px;
+      font-weight: 900;
       line-height: 1.1;
-      margin-bottom: 24px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      margin-bottom: 25px;
     }
     
-    .hero-subtitle {
-      font-size: 1.25rem;
-      opacity: 0.95;
-      margin-bottom: 40px;
+    .subtitle {
+      font-size: 18px;
       line-height: 1.6;
+      margin-bottom: 35px;
+      color: white;
+    }
+    
+    .subtitle strong {
+      color: white;
+      font-weight: 700;
+    }
+    
+    .hero-cta {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
     }
     
     .cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: white;
-      color: #1e40af;
-      padding: 18px 36px;
-      font-size: 1.125rem;
-      border-radius: 12px;
-      text-decoration: none;
+      display: inline-block;
+      padding: 16px 32px;
+      font-size: 16px;
       font-weight: 700;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      border-radius: 10px;
+      text-decoration: none;
       transition: all 0.3s;
     }
     
-    .cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+    .cta-primary {
+      background: #f59e0b;
+      color: white;
+      box-shadow: 0 8px 20px rgba(245,158,11,0.3);
     }
+    
+    .cta-primary:hover {
+      background: #d97706;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(245,158,11,0.4);
+    }
+    
+    .cta-secondary {
+      background: white;
+      color: #1e40af;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    
+    .cta-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+    
+    .hero-image-block {
+      position: relative;
+    }
+    
+    .hero-image-block img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+    
+    .hero-badge-float {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 15px;
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .badge-item {
+      background: white;
+      padding: 15px 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .badge-item strong {
+      display: block;
+      font-size: 20px;
+      font-weight: 900;
+      color: #2563eb;
+      margin-bottom: 3px;
+    }
+    
+    .badge-item span {
+      font-size: 12px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    
     
     /* SECTIONS */
     section {
       padding: 100px 0;
     }
     
-    .section-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 60px;
-    }
-    
     .section-label {
-      display: inline-block;
-      color: #3b82f6;
-      font-weight: 600;
-      font-size: 0.875rem;
+      text-align: center;
+      color: #2563eb;
+      font-weight: 700;
+      font-size: 14px;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
     }
     
     h2 {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
-      color: #0f172a;
-      font-weight: 700;
-      line-height: 1.2;
+      text-align: center;
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #1a1a1a;
     }
     
     .section-desc {
-      font-size: 1.125rem;
-      color: #64748b;
-      line-height: 1.7;
+      text-align: center;
+      font-size: 20px;
+      color: #666;
+      margin-bottom: 70px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
-    /* GRID & CARDS */
+    /* GRID */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-bottom: 60px;
     }
     
     .card {
-      background: #f8fafc;
-      border-radius: 16px;
-      padding: 40px;
+      background: white;
+      padding: 50px 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
       transition: all 0.3s;
-      border: 1px solid #e2e8f0;
     }
     
     .card:hover {
-      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-      transform: translateY(-4px);
-      border-color: #3b82f6;
-      background: white;
+      box-shadow: 0 15px 40px rgba(37,99,235,0.15);
+      transform: translateY(-5px);
     }
     
-    .card-icon {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      display: block;
+    .icon-box {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      font-size: 40px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      box-shadow: 0 8px 20px rgba(37,99,235,0.3);
     }
     
     h3 {
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-      color: #0f172a;
-      font-weight: 600;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #1a1a1a;
     }
     
     p {
-      font-size: 1.0625rem;
-      color: #64748b;
+      font-size: 18px;
       line-height: 1.7;
+      color: #666;
     }
     
-    /* FEATURE LIST */
-    .feature-list {
-      display: grid;
-      gap: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .feature-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      border-left: 4px solid #3b82f6;
-    }
-    
-    .feature-icon {
-      font-size: 2rem;
-      flex-shrink: 0;
-    }
-    
-    .feature-text {
-      flex: 1;
-    }
-    
-    .feature-text strong {
-      color: #1e40af;
-      font-weight: 600;
-    }
-    
-    /* IMAGE SECTION */
-    .image-feature {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      margin: 80px 0;
-    }
-    
-    .image-box {
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-    }
-    
-    .image-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    
-    /* HIGHLIGHT BOX */
+    /* HIGHLIGHT */
     .highlight {
       background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-      border-left: 6px solid #3b82f6;
-      padding: 40px;
-      border-radius: 16px;
-      margin: 60px 0;
+      padding: 50px;
+      border-radius: 20px;
       text-align: center;
+      border-left: 6px solid #2563eb;
     }
     
     .highlight p {
-      font-size: 1.5rem;
-      font-weight: 600;
+      font-size: 28px;
+      font-weight: 700;
       color: #1e40af;
       margin: 0;
     }
     
-    /* LOCATION SECTION */
+    /* FEATURES */
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+    
+    .two-cols img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+    
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 50px;
+    }
+    
+    .feature {
+      display: flex;
+      gap: 20px;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+      border-left: 4px solid #2563eb;
+    }
+    
+    .feature-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+      color: #2563eb;
+    }
+    
+    .feature strong {
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 5px;
+    }
+    
+    .feature span {
+      font-size: 16px;
+      color: #666;
+    }
+    
+    /* LOCATIONS */
     .location-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
     }
     
-    .location-card {
+    .location {
       background: white;
-      padding: 32px;
-      border-radius: 16px;
+      padding: 40px 30px;
+      border-radius: 20px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      border: 2px solid transparent;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
       transition: all 0.3s;
+      border: 2px solid transparent;
     }
     
-    .location-card:hover {
-      border-color: #3b82f6;
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+    .location:hover {
+      border-color: #2563eb;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(37,99,235,0.15);
     }
     
     .location-icon {
-      font-size: 2.5rem;
-      margin-bottom: 12px;
-      display: block;
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      font-size: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      box-shadow: 0 8px 20px rgba(37,99,235,0.3);
     }
     
     /* CTA SECTION */
-    .cta-section {
-      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-      color: white;
-      padding: 80px 0;
+    .cta-box {
+      background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+      padding: 80px 60px;
+      border-radius: 30px;
       text-align: center;
-      border-radius: 24px;
-      margin: 60px 0;
-    }
-    
-    .cta-section h2 {
       color: white;
-      margin-bottom: 24px;
+      margin: 80px 0;
     }
     
-    .cta-section p {
-      color: rgba(255,255,255,0.9);
-      margin-bottom: 32px;
-      font-size: 1.125rem;
+    .cta-box h2 {
+      color: white;
+      margin-bottom: 20px;
+    }
+    
+    .cta-box p {
+      color: rgba(255,255,255,0.95);
+      font-size: 20px;
+      margin-bottom: 40px;
     }
     
     /* FOOTER */
     footer {
-      background: #0f172a;
+      background: #1a1a1a;
       color: white;
       padding: 60px 0 30px;
       text-align: center;
     }
     
+    footer h4 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    
     footer p {
       color: rgba(255,255,255,0.8);
-      margin: 8px 0;
+      margin: 10px 0;
+      font-size: 16px;
     }
+    
+    .copyright {
+      font-size: 14px;
+      margin-top: 30px;
+      opacity: 0.6;
+    }
+    
+    /* CARTES PRIX */
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+    
+    .pricing-card {
+      background: white;
+      padding: 50px 40px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      border: 2px solid #e2e8f0;
+    }
+    
+    .pricing-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 60px rgba(37,99,235,0.25);
+      border-color: #2563eb;
+    }
+    
+    .pricing-card.featured {
+      border: 3px solid #2563eb;
+      background: linear-gradient(135deg, #eff6ff 0%, white 100%);
+      transform: scale(1.08);
+      box-shadow: 0 15px 50px rgba(37,99,235,0.3);
+    }
+    
+    .pricing-card.featured:hover {
+      transform: scale(1.08) translateY(-12px);
+    }
+    
+    .card-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #64748b, #475569);
+      color: white;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+    
+    .featured-badge {
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      box-shadow: 0 4px 20px rgba(37,99,235,0.4);
+    }
+    
+    .card-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+    }
+    
+    .card-price {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #64748b;
+      font-weight: 500;
+    }
+    
+    .card-price strong {
+      font-size: 56px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin: 15px 0;
+    }
+    
+    .card-savings {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 20px;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(16,185,129,0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .card-features {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+      text-align: left;
+    }
+    
+    .card-features li {
+      padding: 12px 0;
+      font-size: 16px;
+      color: #444;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .card-features .check {
+      color: #2563eb;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    
+    .card-description {
+      font-size: 15px;
+      color: #888;
+      margin-top: 20px;
+      font-style: italic;
+    }
+    
+    /* NUMÉROS BLOCS (TEMPORAIRES) */
+    .bloc-number {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #10b981;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 900;
+      box-shadow: 0 4px 15px rgba(16,185,129,0.4);
+      z-index: 1000;
+    }
+    
+    section, .hero, .container > .cta-box {
+      position: relative;
+    }
+    
+    /* BACKGROUND */
+    .bg-light {
+      background: #f8fafc;
+    }
+    
+    /* TUNNEL */
+    .tunnel-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    }
+    
+    .tunnel-step {
+      display: none;
+    }
+    
+    .tunnel-step.active {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .step-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #1a1a1a;
+    }
+    
+    .step-description {
+      text-align: center;
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 40px;
+    }
+    
+    .step-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .step-indicator {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    
+    .step-indicator .step-dot {
+      width: 12px;
+      height: 12px;
+      background: #e2e8f0;
+      border-radius: 50%;
+      transition: all 0.3s;
+    }
+    
+    .step-indicator .step-dot.active {
+      background: #2563eb;
+      width: 30px;
+      border-radius: 6px;
+    }
+    
+    .step-indicator .step-dot.completed {
+      background: #10b981;
+    }
+    
+    .option {
+      position: relative;
+      cursor: pointer;
+    }
+    
+    .option input {
+      position: absolute;
+      opacity: 0;
+    }
+    
+    .option-content {
+      background: #f8fafc;
+      padding: 30px 25px;
+      border-radius: 15px;
+      border: 2px solid #e2e8f0;
+      transition: all 0.3s;
+      text-align: center;
+    }
+    
+    .option-content strong {
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+    
+    .option-content span {
+      font-size: 14px;
+      color: #666;
+    }
+    
+    .option:hover .option-content {
+      border-color: #2563eb;
+      background: #eff6ff;
+    }
+    
+    .option input:checked + .option-content,
+    .option.selected .option-content {
+      border-color: #2563eb;
+      background: linear-gradient(135deg, #eff6ff, white);
+      box-shadow: 0 8px 20px rgba(37,99,235,0.15);
+    }
+    
+    .tunnel-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 2px solid #f1f5f9;
+    }
+    
+    .btn-prev,
+    .btn-next {
+      background: #2563eb;
+      color: white;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .btn-prev {
+      background: #e2e8f0;
+      color: #1a1a1a;
+    }
+    
+    .btn-prev:hover,
+    .btn-next:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37,99,235,0.3);
+    }
+    
+    
     
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      
-      h2 {
-        font-size: 2rem;
-      }
-      
-      .hero {
-        padding: 60px 0 80px;
-      }
-      
-      section {
-        padding: 60px 0;
-      }
-      
-      .image-feature {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      
-      .grid {
-        grid-template-columns: 1fr;
-      }
+      h1 { font-size: 32px; }
+      h2 { font-size: 28px; }
+      .subtitle { font-size: 16px; }
+      .grid { grid-template-columns: 1fr; }
+      .two-cols { grid-template-columns: 1fr; gap: 40px; }
+      .location-grid { grid-template-columns: 1fr; }
+      .pricing-cards { grid-template-columns: 1fr; }
+      .pricing-card.featured { transform: scale(1); }
+      .hero { padding: 60px 0 60px; }
+      .hero h1 { font-size: 36px !important; line-height: 1.2 !important; }
+      .hero p { font-size: 20px !important; }
+      .hero a { font-size: 16px !important; padding: 20px 40px !important; }
+      .grid { grid-template-columns: 1fr; }
+      section { padding: 60px 0; }
+      .tunnel-wrapper { padding: 30px 20px; }
+      .step-options { grid-template-columns: 1fr; }
+      .step-title { font-size: 22px; }
+      .step-description { font-size: 14px; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
+  <!-- ========== BLOC 1 : HERO ========== -->
   <div class="hero">
     <div class="container">
-      <div class="hero-content">
-        <span class="hero-badge">🚗 Candidat Libre Toulouse</span>
-        <h1>Auto-école saturée ?<br>Louez une voiture double commande</h1>
-        <p class="hero-subtitle">
-          Planning complet, tarifs trop élevés ? Continuez votre formation avec une voiture double commande 
-          et un accompagnateur qualifié. Sans engagement.
+      <div class="bloc-number" style="position: fixed; z-index: 9999;">1</div>
+      
+      <!-- Hero simplifié et moderne -->
+      <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+        
+        <!-- Badge supérieur -->
+        <div style="display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 8px 20px; border-radius: 50px; margin-bottom: 30px; animation: fadeInUp 0.6s ease-out;">
+          <span style="color: white; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Candidat Libre • Toulouse</span>
+        </div>
+        
+        <!-- Accroche principale -->
+        <h1 style="font-size: 64px; font-weight: 900; color: white; margin-bottom: 25px; line-height: 1.1; animation: fadeInUp 0.8s ease-out; text-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+          Délais interminables ?<br>
+          Tarifs trop élevés ?
+        </h1>
+        
+        <p style="font-size: 28px; color: #93c5fd; font-weight: 700; margin-bottom: 50px; animation: fadeInUp 1s ease-out;">
+          Conduisez dès maintenant avec une Clio V
         </p>
-        <a class="cta" href="tel:+33745117867">
-          📞 Appelez maintenant : 07 45 11 78 67
+        
+        <!-- Image voiture avec animation -->
+        <div style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 30px; padding: 50px; margin: 0 auto 50px; max-width: 650px; box-shadow: 0 25px 70px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.1); animation: fadeInUp 1.2s ease-out, float 3s ease-in-out 1.2s infinite;">
+          <img src="assets/Cliov.svg" alt="Clio V double commande" style="width: 100%; height: auto; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));">
+        </div>
+        
+        <!-- Badges horizontaux améliorés -->
+        <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 50px; flex-wrap: wrap;">
+          <div style="background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.08)); backdrop-filter: blur(10px); padding: 25px 40px; border-radius: 20px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='rgba(255,255,255,0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,255,255,0.3)'">
+            <div style="font-size: 36px; font-weight: 900; color: white; margin-bottom: 8px;">30€</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600;">Par heure</div>
+          </div>
+          
+          <div style="background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.08)); backdrop-filter: blur(10px); padding: 25px 40px; border-radius: 20px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='rgba(255,255,255,0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,255,255,0.3)'">
+            <div style="font-size: 36px; font-weight: 900; color: white; margin-bottom: 8px;">Clio V</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600;">Double commande</div>
+          </div>
+          
+          <div style="background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.08)); backdrop-filter: blur(10px); padding: 25px 40px; border-radius: 20px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='rgba(255,255,255,0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,255,255,0.3)'">
+            <div style="font-size: 24px; font-weight: 900; color: #10b981; margin-bottom: 8px;">Disponible</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600;">Dispo rapide</div>
+          </div>
+        </div>
+        
+        <!-- CTA principal amélioré -->
+        <a href="#tunnel" style="display: inline-block; background: white; color: #2563eb; padding: 25px 70px; border-radius: 50px; font-size: 20px; font-weight: 900; text-decoration: none; box-shadow: 0 20px 50px rgba(255,255,255,0.3), 0 0 0 3px rgba(255,255,255,0.2); transition: all 0.3s; text-transform: uppercase; letter-spacing: 1.5px; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 25px 60px rgba(255,255,255,0.4), 0 0 0 3px rgba(255,255,255,0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 20px 50px rgba(255,255,255,0.3), 0 0 0 3px rgba(255,255,255,0.2)'">
+          <span style="position: relative; z-index: 1;">Réserver maintenant</span>
         </a>
+        
+        <!-- Texte de réassurance -->
+        <div style="margin-top: 30px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; align-items: center;">
+          <p style="color: rgba(255,255,255,0.9); font-size: 15px; margin: 0; display: flex; align-items: center; gap: 8px;">
+            <span style="color: #10b981; font-size: 18px;">•</span>
+            <span style="font-weight: 600;">Réponse en moins de 2h</span>
+          </p>
+          <p style="color: rgba(255,255,255,0.9); font-size: 15px; margin: 0; display: flex; align-items: center; gap: 8px;">
+            <span style="color: #10b981; font-size: 18px;">•</span>
+            <span style="font-weight: 600;">Sans engagement</span>
+          </p>
+          <p style="color: rgba(255,255,255,0.9); font-size: 15px; margin: 0; display: flex; align-items: center; gap: 8px;">
+            <span style="color: #93c5fd; font-size: 18px;">•</span>
+            <span style="font-weight: 600;">Accompagnateur inclus</span>
+          </p>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- IMAGE -->
-  <section style="padding: 0; margin: -60px 0 0;">
+  <!-- ========== BLOC 2 : TARIFS ========== -->
+  <section style="background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); padding: 100px 0;">
+    <div class="bloc-number">2</div>
     <div class="container">
-      <div class="image-box" style="max-width: 900px; margin: 0 auto;">
-        <img src="assets/clio.jpg" alt="Voiture auto-école Candidalib">
-      </div>
-    </div>
-  </section>
-
-  <!-- PROBLÈME -->
-  <section>
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Le Problème</span>
-        <h2>Vous êtes bloqué dans votre formation</h2>
-        <p class="section-desc">
-          Des milliers de candidats rencontrent les mêmes difficultés
+      <div style="text-align: center; margin-bottom: 60px;">
+        <div style="display: inline-block; background: linear-gradient(135deg, #2563eb, #3b82f6); padding: 10px 25px; border-radius: 50px; margin-bottom: 20px;">
+          <span style="color: white; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Nos Tarifs</span>
+        </div>
+        <h2 style="font-size: 48px; font-weight: 900; color: #0f172a; margin-bottom: 20px;">Des prix clairs et avantageux</h2>
+        <p style="font-size: 20px; color: #64748b; max-width: 600px; margin: 0 auto;">
+          Choisissez la formule qui correspond à vos besoins
         </p>
       </div>
       
-      <div class="grid">
-        <div class="card">
-          <span class="card-icon">⏳</span>
-          <h3>Délais interminables</h3>
-          <p>Impossible de placer vos heures, planning saturé pendant des semaines</p>
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <div class="card-badge">1H</div>
+          <h3 class="card-title">Session d'une heure</h3>
+          <p class="card-price">À partir de <strong>35€</strong></p>
+          <p style="font-size: 13px; color: #888; margin: -5px 0 15px 0; font-style: italic;">Accompagnateur inclus</p>
+          <ul class="card-features">
+            <li><span class="check">✓</span> Flexibilité totale</li>
+            <li><span class="check">✓</span> Réservation rapide</li>
+            <li><span class="check">✓</span> Sans engagement</li>
+          </ul>
+          <p class="card-description">Idéal pour des séances ponctuelles de perfectionnement</p>
         </div>
         
-        <div class="card">
-          <span class="card-icon">💸</span>
-          <h3>Tarifs prohibitifs</h3>
-          <p>45-60€ l'heure supplémentaire, votre budget explose</p>
+        <div class="pricing-card featured">
+          <div class="card-badge featured-badge">Formule 10H</div>
+          <h3 class="card-title">Forfait 10 heures</h3>
+          <p class="card-price">À partir de <strong>30€/h</strong></p>
+          <p style="font-size: 13px; color: #888; margin: -5px 0 10px 0; font-style: italic;">Accompagnateur inclus</p>
+          <div class="card-savings">Économisez 50€</div>
+          <ul class="card-features">
+            <li><span class="check">✓</span> Meilleur rapport qualité/prix</li>
+            <li><span class="check">✓</span> Examens blancs inclus</li>
+            <li><span class="check">✓</span> Suivi personnalisé</li>
+          </ul>
+          <p class="card-description">Économisez avec notre forfait le plus avantageux</p>
         </div>
         
-        <div class="card">
-          <span class="card-icon">😤</span>
-          <h3>Frustration</h3>
-          <p>Vous êtes motivé mais le système vous ralentit</p>
+        <div class="pricing-card">
+          <div class="card-badge">EXAMEN</div>
+          <h3 class="card-title">Présentation à l'examen</h3>
+          <p class="card-price">À partir de <strong>70€</strong></p>
+          <p style="font-size: 13px; color: #888; margin: -5px 0 15px 0; font-style: italic;">Accompagnateur inclus</p>
+          <ul class="card-features">
+            <li><span class="check">✓</span> Entraînement sur parcours</li>
+            <li><span class="check">✓</span> Révision complète</li>
+            <li><span class="check">✓</span> Confiance maximale</li>
+          </ul>
+          <p class="card-description">Préparez-vous sereinement pour le jour J</p>
         </div>
-      </div>
-      
-      <div class="highlight">
-        <p>👉 Vous êtes prêt à conduire, mais impossible de pratiquer</p>
       </div>
     </div>
   </section>
 
-  <!-- SOLUTION -->
-  <section style="background: #f8fafc;">
+  <!-- ========== BLOC 3 : SOLUTION ========== -->
+  <section class="bg-light">
+    <div class="bloc-number">3</div>
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">La Solution</span>
-        <h2>Une alternative simple et légale</h2>
-      </div>
+      <div class="section-label">La Solution</div>
+      <h2>Une alternative simple</h2>
       
-      <div class="image-feature">
-        <div class="image-box">
-          <img src="assets/clio-interieur-1.png" alt="Intérieur voiture">
-        </div>
+      <div class="two-cols">
+        <img src="assets/clio-interieur-1.png" alt="Intérieur voiture">
         <div>
-          <h3 style="font-size: 1.75rem; margin-bottom: 24px;">Location + Accompagnateur inclus</h3>
-          <p style="margin-bottom: 24px;">
-            <strong>Candidalib</strong> vous propose la location d'une voiture double commande moderne et conforme, 
+       
+          <p style="font-size: 19px; margin-bottom: 20px;">
+            <strong style="color: #2563eb;">Candidalib</strong> vous propose la conduite avec une voiture double commande moderne et conforme, 
             avec un accompagnateur qualifié présent à chaque session.
           </p>
-          <p>
-            Plus besoin d'attendre des semaines. Réservez quand vous voulez, au tarif que vous méritez.
+          <p style="font-size: 19px;">
+            Plus besoin d'attendre des semaines. Conduisez quand vous voulez, au tarif que vous méritez.
           </p>
         </div>
       </div>
       
-      <div style="margin-top: 80px;">
-        <h3 style="text-align: center; font-size: 1.75rem; margin-bottom: 40px;">Ce que vous obtenez</h3>
+      <div style="margin-top: 100px;">
+        <h3 style="text-align: center; font-size: 32px; margin-bottom: 50px;">Ce que vous obtenez</h3>
         
-        <div class="feature-list">
-          <div class="feature-item">
-            <span class="feature-icon">🚗</span>
-            <div class="feature-text">
-              <strong>Voiture récente double commande</strong> conforme examen, assurance complète
+        <div class="feature-list" style="max-width: 900px; margin: 0 auto;">
+          <div class="feature">
+            <span class="feature-icon">✓</span>
+            <div>
+              <strong>Voiture récente double commande</strong>
+              <span>conforme examen, assurance complète</span>
             </div>
           </div>
           
-          <div class="feature-item">
-            <span class="feature-icon">👨‍🏫</span>
-            <div class="feature-text">
-              <strong>Accompagnateur qualifié</strong> présent à chaque session, formé et expérimenté
+          <div class="feature">
+            <span class="feature-icon">✓</span>
+            <div>
+              <strong>Accompagnateur qualifié</strong>
+              <span>présent à chaque session, formé et expérimenté</span>
             </div>
           </div>
           
-          <div class="feature-item">
-            <span class="feature-icon">📅</span>
-            <div class="feature-text">
-              <strong>Horaires flexibles</strong> adaptés à votre emploi du temps, pas d'attente
+          <div class="feature">
+            <span class="feature-icon">✓</span>
+            <div>
+              <strong>Horaires flexibles</strong>
+              <span>adaptés à votre emploi du temps, pas d'attente</span>
             </div>
           </div>
           
-          <div class="feature-item">
-            <span class="feature-icon">💰</span>
-            <div class="feature-text">
-              <strong>Tarifs transparents</strong> bien plus avantageux que les auto-écoles
+          <div class="feature">
+            <span class="feature-icon">✓</span>
+            <div>
+              <strong>Tarifs transparents</strong>
+              <span>bien plus avantageux que les auto-écoles</span>
             </div>
           </div>
           
-          <div class="feature-item">
-            <span class="feature-icon">🤝</span>
-            <div class="feature-text">
-              <strong>Sans engagement</strong> ni pression commerciale, vous décidez
+          <div class="feature">
+            <span class="feature-icon">✓</span>
+            <div>
+              <strong>Sans engagement</strong>
+              <span>ni pression commerciale, vous décidez</span>
             </div>
           </div>
         </div>
@@ -474,20 +969,76 @@
     </div>
   </section>
 
-  <!-- POURQUOI ÇA MARCHE -->
-  <section>
+  <!-- ========== BLOC 4 : TUNNEL ========== -->
+  <section id="tunnel" style="padding: 80px 0; background: white;">
+    <div class="bloc-number">4</div>
     <div class="container">
-      <div class="image-feature" style="direction: rtl;">
-        <div class="image-box">
-          <img src="assets/apprendre-conduire-paris.jpeg" alt="Apprentissage">
+      <div class="tunnel-wrapper">
+        <div class="tunnel-header">
+          <h2 style="text-align: center; margin-bottom: 50px;">Trouvez votre formule idéale</h2>
         </div>
+        
+        <!-- Step Indicator -->
+        <div class="step-indicator" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 40px;">
+          <div class="step-dot active" data-step-dot="0"></div>
+          <div class="step-dot" data-step-dot="1"></div>
+          <div class="step-dot" data-step-dot="2"></div>
+        </div>
+        
+        <!-- Form -->
+        <form id="tunnel-form-page">
+          <!-- ÉTAPE 0 : Situation de base -->
+          <div class="tunnel-step active" data-step="0">
+            <h3 class="step-title">Où en êtes-vous ?</h3>
+            <p class="step-description">Choisissez votre situation</p>
+            
+            <div class="step-options">
+              <label class="option">
+                <input type="radio" name="base" value="passer" required>
+                <div class="option-content">
+                  <strong>Je souhaite passer mon permis</strong>
+                  <span>Je n'ai pas encore le permis de conduire</span>
+                </div>
+              </label>
+              
+              <label class="option">
+                <input type="radio" name="base" value="ai-permis" required>
+                <div class="option-content">
+                  <strong>J'ai déjà mon permis</strong>
+                  <span>J'ai besoin d'une remise à niveau</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Étapes dynamiques générées par JavaScript -->
+          <div id="dynamic-steps-page"></div>
+        </form>
+
+        <!-- Navigation -->
+        <div class="tunnel-nav">
+          <button type="button" id="btn-prev-page" class="btn-prev" style="display: none;">
+            ← Précédent
+          </button>
+          <div style="flex: 1;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BLOC 5 : EFFICACE / POURQUOI ÇA MARCHE ========== -->
+  <section>
+    <div class="bloc-number">5</div>
+    <div class="container">
+      <div class="two-cols" style="direction: rtl;">
+        <img src="assets/apprendre-conduire-paris.jpeg" alt="Apprentissage">
         <div style="direction: ltr;">
-          <span class="section-label">Efficace</span>
+          <div class="section-label" style="text-align: left;">Efficace</div>
           <h2 style="text-align: left;">Pourquoi ça marche</h2>
-          <p style="margin-bottom: 20px;">
+          <p style="font-size: 19px; margin-bottom: 20px;">
             Nos accompagnateurs sont formés pour vous mettre en confiance et vous aider à progresser rapidement.
           </p>
-          <p>
+          <p style="font-size: 19px;">
             Vous conduisez dans les mêmes conditions que le jour de l'examen : véhicule homologué, 
             double commande, parcours d'examen locaux.
           </p>
@@ -496,66 +1047,300 @@
     </div>
   </section>
 
-  <!-- ZONES COUVERTES -->
-  <section style="background: #f8fafc;">
+  <!-- ========== BLOC 6 : ZONES COUVERTES ========== -->
+  <section class="bg-light">
+    <div class="bloc-number">6</div>
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">📍 Service Local</span>
-        <h2>Toulouse & agglomération</h2>
-        <p class="section-desc">
-          Voiture double commande avec accompagnateur qualifié disponible dans toute l'agglomération toulousaine
-        </p>
-      </div>
+      <div class="section-label">Service Local</div>
+      <h2>Toulouse & agglomération</h2>
+      <p class="section-desc">
+        Voiture double commande avec accompagnateur qualifié disponible dans toute l'agglomération toulousaine
+      </p>
       
       <div class="location-grid">
-        <div class="location-card">
-          <span class="location-icon">🏙️</span>
+        <div class="location">
+          <div class="location-icon">●</div>
           <h3>Toulouse Centre</h3>
-          <p style="margin: 0; font-size: 0.9375rem;">Tous quartiers</p>
+          <p style="margin: 0;">Tous quartiers</p>
         </div>
         
-        <div class="location-card">
-          <span class="location-icon">✈️</span>
+        <div class="location">
+          <div class="location-icon">●</div>
           <h3>Blagnac</h3>
-          <p style="margin: 0; font-size: 0.9375rem;">Proche aéroport</p>
+          <p style="margin: 0;">Proche aéroport</p>
         </div>
         
-        <div class="location-card">
-          <span class="location-icon">🌳</span>
+        <div class="location">
+          <div class="location-icon">●</div>
           <h3>Colomiers</h3>
-          <p style="margin: 0; font-size: 0.9375rem;">Et communes ouest</p>
+          <p style="margin: 0;">Et communes ouest</p>
         </div>
         
-        <div class="location-card">
-          <span class="location-icon">🏘️</span>
+        <div class="location">
+          <div class="location-icon">●</div>
           <h3>Environs</h3>
-          <p style="margin: 0; font-size: 0.9375rem;">Tournefeuille, Balma, Ramonville...</p>
+          <p style="margin: 0;">Tournefeuille, Balma...</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
+  <!-- ========== BLOC 7 : CTA FINAL ========== -->
   <div class="container">
-    <div class="cta-section">
+    <div class="cta-box">
+      <div class="bloc-number">7</div>
       <h2>Prêt à reprendre votre formation ?</h2>
       <p>Appelez-nous pour vérifier les disponibilités et les modalités</p>
-      <a class="cta" href="tel:+33745117867" style="background: #3b82f6; color: white;">
-        📞 07 45 11 78 67
-      </a>
+      <a class="cta" href="tel:+33745117867">Appelez le 07 45 11 78 67</a>
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- ========== SCRIPT TUNNEL ========== -->
+  <script>
+    // ==========================================
+    // TUNNEL LOGIC - ARBRE DE DÉCISION
+    // ==========================================
+    const formPage = document.getElementById('tunnel-form-page');
+    const dynamicStepsPage = document.getElementById('dynamic-steps-page');
+    const btnPrevPage = document.getElementById('btn-prev-page');
+    let currentStepIndexPage = 0;
+    let userChoicesPage = {};
+    let stepsHistoryPage = [];
+
+    // Arbre de décision complet
+    const flowTreePage = {
+      'passer': {
+        question: "Quelle est votre situation actuelle ?",
+        description: "Précisez votre parcours",
+        options: [
+          { value: 'ai-auto-ecole', title: "J'ai déjà une auto-école", description: "Je suis inscrit dans une auto-école" },
+          { value: 'pas-auto-ecole', title: "Non, je n'ai pas d'auto-école", description: "Je souhaite me former autrement" },
+          { value: 'conduite-accompagnee', title: "Je suis en conduite accompagnée/supervisée sans accompagnateur", description: "J'ai besoin d'un accompagnateur équipé" }
+        ],
+        next: (choice) => {
+          if (choice === 'ai-auto-ecole') return 'auto-ecole-action';
+          if (choice === 'pas-auto-ecole') return 'pas-auto-ecole-detail';
+          if (choice === 'conduite-accompagnee') return 'REDIRECT:#conduite-accompagnee';
+        }
+      },
+      'auto-ecole-action': {
+        question: "Que souhaitez-vous faire ?",
+        description: "Choisissez votre besoin",
+        options: [
+          { value: 'heures-supp', title: "Je souhaite faire des heures supplémentaires", description: "Complément à ma formation actuelle" },
+          { value: 'transfert', title: "Je souhaite transférer mon dossier", description: "Changer d'établissement" }
+        ],
+        next: (choice) => {
+          if (choice === 'heures-supp') return 'heures-deja-faites';
+          if (choice === 'transfert') return 'REDIRECT:tel:+33745117867';
+        }
+      },
+      'heures-deja-faites': {
+        question: "Combien d'heures avez-vous déjà effectuées ?",
+        description: "Pour mieux vous orienter",
+        options: [
+          { value: 'moins-20', title: "Moins de 20 heures", description: "Début de formation" },
+          { value: 'plus-20', title: "Plus de 20 heures", description: "Formation avancée" }
+        ],
+        next: () => 'heures-besoin'
+      },
+      'heures-besoin': {
+        question: "Combien d'heures pensez-vous avoir besoin ?",
+        description: "Choisissez votre formule",
+        options: [
+          { value: '1-5', title: "Entre 1 et 5 heures", description: "Quelques sessions de perfectionnement" },
+          { value: '5-10', title: "Entre 5 et 10 heures", description: "Programme de préparation" },
+          { value: 'plus-10', title: "Plus de 10 heures", description: "Formation complète" }
+        ],
+        next: (choice) => {
+          if (choice === '1-5') return 'REDIRECT:#tarifs';
+          return 'REDIRECT:#tarifs';
+        }
+      },
+      'pas-auto-ecole-detail': {
+        question: "Souhaitez-vous être accompagné ?",
+        description: "Précisez votre besoin",
+        options: [
+          { value: 'besoin-accompagnateur', title: "Oui, j'ai besoin d'un accompagnateur", description: "Je n'ai personne pour m'accompagner" },
+          { value: 'ai-accompagnateur', title: "Non, j'ai déjà un accompagnateur", description: "Une personne peut m'accompagner" }
+        ],
+        next: (choice) => {
+          if (choice === 'besoin-accompagnateur') return 'REDIRECT:tel:+33745117867';
+          return 'REDIRECT:tel:+33745117867';
+        }
+      }
+    };
+
+    // Générer une étape dynamique
+    function generateStepPage(stepKey) {
+      const stepData = flowTreePage[stepKey];
+      if (!stepData) return;
+
+      const stepHTML = `
+        <div class="tunnel-step active" data-step-key="${stepKey}">
+          <h3 class="step-title">${stepData.question}</h3>
+          <p class="step-description">${stepData.description}</p>
+          <div class="step-options">
+            ${stepData.options.map(opt => `
+              <label class="option">
+                <input type="radio" name="${stepKey}" value="${opt.value}" required>
+                <div class="option-content">
+                  <strong>${opt.title}</strong>
+                  <span>${opt.description}</span>
+                </div>
+              </label>
+            `).join('')}
+          </div>
+        </div>
+      `;
+
+      dynamicStepsPage.innerHTML = stepHTML;
+      setupOptionListenersPage();
+    }
+
+    // Configurer les listeners pour les options
+    function setupOptionListenersPage() {
+      const dynamicInputs = dynamicStepsPage.querySelectorAll('input[type="radio"]');
+      dynamicInputs.forEach(input => {
+        input.addEventListener('change', () => {
+          document.querySelectorAll(`input[name="${input.name}"]`).forEach(i => {
+            i.closest('.option').classList.toggle('selected', i === input);
+          });
+          userChoicesPage[input.name] = input.value;
+          
+          setTimeout(() => {
+            goToNextStepPage();
+          }, 400);
+        });
+      });
+    }
+
+    // Naviguer vers la prochaine étape
+    function goToNextStepPage() {
+      const currentStep = document.querySelector('#dynamic-steps-page .tunnel-step.active');
+      if (!currentStep) return;
+      
+      const stepKey = currentStep.dataset.stepKey;
+      const currentChoice = userChoicesPage[stepKey];
+      const stepData = flowTreePage[stepKey];
+      const nextKey = stepData ? stepData.next(currentChoice) : null;
+      
+      // Gérer les redirections
+      if (nextKey && nextKey.startsWith('REDIRECT:')) {
+        const url = nextKey.replace('REDIRECT:', '');
+        if (url.startsWith('tel:')) {
+          window.location.href = url;
+        } else if (url.startsWith('#')) {
+          document.querySelector(url).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          window.location.href = url;
+        }
+        return;
+      }
+      
+      stepsHistoryPage.push(stepKey);
+      currentStep.classList.remove('active');
+      
+      if (nextKey) {
+        generateStepPage(nextKey);
+        currentStepIndexPage++;
+        updateStepIndicatorsPage();
+        updatePrevButtonPage();
+      }
+    }
+
+    // Retour en arrière
+    function goToPreviousStepPage() {
+      if (stepsHistoryPage.length === 0) {
+        const allSteps = Array.from(document.querySelectorAll('.tunnel-step'));
+        allSteps.forEach(s => s.classList.remove('active'));
+        allSteps[0].classList.add('active');
+        currentStepIndexPage = 0;
+        dynamicStepsPage.innerHTML = '';
+      } else {
+        const previousKey = stepsHistoryPage.pop();
+        const allSteps = Array.from(document.querySelectorAll('.tunnel-step'));
+        allSteps.forEach(s => s.classList.remove('active'));
+        
+        if (stepsHistoryPage.length === 0) {
+          allSteps[0].classList.add('active');
+          currentStepIndexPage = 0;
+          dynamicStepsPage.innerHTML = '';
+        } else {
+          generateStepPage(previousKey);
+          currentStepIndexPage--;
+        }
+      }
+      updateStepIndicatorsPage();
+      updatePrevButtonPage();
+    }
+
+    // Mettre à jour les indicateurs
+    function updateStepIndicatorsPage() {
+      const stepDots = Array.from(document.querySelectorAll('.step-dot'));
+      stepDots.forEach((dot, index) => {
+        dot.classList.remove('active', 'completed');
+        if (index < currentStepIndexPage) {
+          dot.classList.add('completed');
+        } else if (index === currentStepIndexPage) {
+          dot.classList.add('active');
+        }
+      });
+    }
+
+    // Mettre à jour le bouton précédent
+    function updatePrevButtonPage() {
+      btnPrevPage.style.display = currentStepIndexPage === 0 ? 'none' : 'block';
+    }
+
+    // Gérer le premier choix
+    document.querySelectorAll('#tunnel-form-page input[name="base"]').forEach(input => {
+      input.addEventListener('change', () => {
+        document.querySelectorAll('#tunnel-form-page input[name="base"]').forEach(i => {
+          i.closest('.option').classList.toggle('selected', i === input);
+        });
+        userChoicesPage.base = input.value;
+        
+        setTimeout(() => {
+          const baseChoice = userChoicesPage.base;
+          if (baseChoice === 'ai-permis') {
+            document.querySelector('#tarifs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else if (baseChoice === 'passer') {
+            // Masquer la première étape
+            const firstStep = document.querySelector('#tunnel-form-page .tunnel-step[data-step="0"]');
+            if (firstStep) {
+              firstStep.classList.remove('active');
+            }
+            
+            stepsHistoryPage.push('base');
+            generateStepPage('passer');
+            currentStepIndexPage++;
+            updateStepIndicatorsPage();
+            updatePrevButtonPage();
+          }
+        }, 400);
+      });
+    });
+
+    // Bouton précédent
+    btnPrevPage.addEventListener('click', goToPreviousStepPage);
+    
+    // Smooth scroll vers le tunnel
+    document.querySelectorAll('a[href="#tunnel"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('tunnel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+
+  <!-- ========== BLOC 8 : FOOTER ========== -->
   <footer>
+    <div class="bloc-number">8</div>
     <div class="container">
-      <p style="font-size: 1.125rem; font-weight: 600; color: white; margin-bottom: 12px;">
-        🚗 Candidalib
-      </p>
+      <h4>Candidalib</h4>
       <p>Voiture double commande avec accompagnateur qualifié à Toulouse</p>
-      <p style="font-size: 0.875rem; margin-top: 24px; opacity: 0.6;">
-        © 2025 Candidalib - Tous droits réservés
-      </p>
+      <p class="copyright">© 2025 Candidalib - Tous droits réservés</p>
     </div>
   </footer>
 
