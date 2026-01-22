@@ -4,158 +4,560 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Voiture double commande à Toulouse – Candidat libre pas cher</title>
-
   <meta name="description" content="Auto-école complète ou trop chère ? Louez une voiture double commande à Toulouse avec accompagnateur qualifié pour passer le permis en candidat libre. Appelez-nous.">
-
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    * {
       margin: 0;
-      color: #111;
-      background: #f8f9fb;
+      padding: 0;
+      box-sizing: border-box;
     }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #0f172a;
+      line-height: 1.7;
+      background: #fff;
+    }
+    
     .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 32px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
-    h1 {
-      font-size: 2.4rem;
-      line-height: 1.2;
-      margin-bottom: 16px;
+    
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+      color: white;
+      padding: 80px 0 120px;
+      position: relative;
+      overflow: hidden;
     }
-    h2 {
-      font-size: 1.6rem;
-      margin-top: 48px;
-      margin-bottom: 16px;
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: white;
+      clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
     }
-    p {
-      font-size: 1.05rem;
-      line-height: 1.6;
-      margin-bottom: 16px;
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
     }
-    ul {
-      padding-left: 20px;
+    
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
       margin-bottom: 24px;
     }
-    li {
-      margin-bottom: 10px;
-      font-size: 1.05rem;
+    
+    h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
-    .hero {
-      background: white;
-      border-radius: 12px;
-      padding: 36px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    
+    .hero-subtitle {
+      font-size: 1.25rem;
+      opacity: 0.95;
+      margin-bottom: 40px;
+      line-height: 1.6;
     }
+    
     .cta {
-      display: inline-block;
-      background: #0a7cff;
-      color: white;
-      padding: 16px 28px;
-      font-size: 1.2rem;
-      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      color: #1e40af;
+      padding: 18px 36px;
+      font-size: 1.125rem;
+      border-radius: 12px;
       text-decoration: none;
-      font-weight: 600;
-      margin-top: 20px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      transition: all 0.3s;
     }
+    
     .cta:hover {
-      background: #055fd1;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.2);
     }
-    .highlight {
-      background: #eef4ff;
-      border-left: 5px solid #0a7cff;
-      padding: 20px;
-      border-radius: 8px;
-      margin: 32px 0;
+    
+    /* SECTIONS */
+    section {
+      padding: 100px 0;
     }
-    .zones {
+    
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+    
+    .section-label {
+      display: inline-block;
+      color: #3b82f6;
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      color: #0f172a;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    
+    .section-desc {
+      font-size: 1.125rem;
+      color: #64748b;
+      line-height: 1.7;
+    }
+    
+    /* GRID & CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+    
+    .card {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 40px;
+      transition: all 0.3s;
+      border: 1px solid #e2e8f0;
+    }
+    
+    .card:hover {
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+      border-color: #3b82f6;
+      background: white;
+    }
+    
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: #0f172a;
+      font-weight: 600;
+    }
+    
+    p {
+      font-size: 1.0625rem;
+      color: #64748b;
+      line-height: 1.7;
+    }
+    
+    /* FEATURE LIST */
+    .feature-list {
+      display: grid;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
       background: white;
       padding: 24px;
       border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-left: 4px solid #3b82f6;
+    }
+    
+    .feature-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+    
+    .feature-text {
+      flex: 1;
+    }
+    
+    .feature-text strong {
+      color: #1e40af;
+      font-weight: 600;
+    }
+    
+    /* IMAGE SECTION */
+    .image-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin: 80px 0;
+    }
+    
+    .image-box {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+    
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    /* HIGHLIGHT BOX */
+    .highlight {
+      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+      border-left: 6px solid #3b82f6;
+      padding: 40px;
+      border-radius: 16px;
+      margin: 60px 0;
+      text-align: center;
+    }
+    
+    .highlight p {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1e40af;
+      margin: 0;
+    }
+    
+    /* LOCATION SECTION */
+    .location-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
       margin-top: 40px;
     }
-    footer {
+    
+    .location-card {
+      background: white;
+      padding: 32px;
+      border-radius: 16px;
       text-align: center;
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 60px;
-      padding-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      border: 2px solid transparent;
+      transition: all 0.3s;
+    }
+    
+    .location-card:hover {
+      border-color: #3b82f6;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+    }
+    
+    .location-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+      border-radius: 24px;
+      margin: 60px 0;
+    }
+    
+    .cta-section h2 {
+      color: white;
+      margin-bottom: 24px;
+    }
+    
+    .cta-section p {
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 32px;
+      font-size: 1.125rem;
+    }
+    
+    /* FOOTER */
+    footer {
+      background: #0f172a;
+      color: white;
+      padding: 60px 0 30px;
+      text-align: center;
+    }
+    
+    footer p {
+      color: rgba(255,255,255,0.8);
+      margin: 8px 0;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      h2 {
+        font-size: 2rem;
+      }
+      
+      .hero {
+        padding: 60px 0 80px;
+      }
+      
+      section {
+        padding: 60px 0;
+      }
+      
+      .image-feature {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-
-    <!-- HERO -->
-    <section class="hero">
-      <h1>Auto-école complète ou trop chère ?<br>
-      Voiture double commande à Toulouse avec accompagnateur qualifié</h1>
-
-      <p>
-        Vous avez du mal à placer vos heures de conduite ?  
-        Le planning de votre auto-école est saturé et les tarifs explosent ?
-      </p>
-
-      <p>
-        <strong>Candidalib</strong> vous propose la <strong>location d'une voiture double commande</strong>
-        <strong>avec un accompagnateur qualifié mis à disposition</strong>,  
-        pour continuer à conduire sans dépendre de votre auto-école.
-      </p>
-
-      <a class="cta" href="tel:+33745117867">📞 Appeler maintenant : 07 45 11 78 67</a>
-    </section>
-
-    <!-- PROBLÈME -->
-    <section>
-      <h2>Un blocage fréquent chez les candidats au permis</h2>
-      <ul>
-        <li>❌ Auto-écoles saturées, délais interminables</li>
-        <li>❌ Heures de conduite hors de prix</li>
-        <li>❌ Motivation intacte, mais impossibilité de pratiquer</li>
-      </ul>
-
-      <div class="highlight">
-        👉 Vous êtes prêt à conduire, mais le système vous ralentit.
+  <!-- HERO -->
+  <div class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">🚗 Candidat Libre Toulouse</span>
+        <h1>Auto-école saturée ?<br>Louez une voiture double commande</h1>
+        <p class="hero-subtitle">
+          Planning complet, tarifs trop élevés ? Continuez votre formation avec une voiture double commande 
+          et un accompagnateur qualifié. Sans engagement.
+        </p>
+        <a class="cta" href="tel:+33745117867">
+          📞 Appelez maintenant : 07 45 11 78 67
+        </a>
       </div>
-    </section>
-
-    <!-- SOLUTION -->
-    <section>
-      <h2>Une alternative simple et encadrée</h2>
-      <ul>
-        <li>✔️ Location de voiture double commande conforme examen</li>
-        <li>✔️ <strong>Accompagnateur qualifié présent à chaque session</strong></li>
-        <li>✔️ Horaires plus souples que les auto-écoles</li>
-        <li>✔️ Coût largement inférieur aux forfaits classiques</li>
-        <li>✔️ Sans engagement, sans pression commerciale</li>
-      </ul>
-    </section>
-
-    <!-- LOCAL -->
-    <section class="zones">
-      <h2>Service local – Toulouse & environs</h2>
-      <p>
-        Location de voiture double commande <strong>avec accompagnateur qualifié</strong>  
-        à Toulouse, Blagnac, Colomiers, Tournefeuille, Balma, Ramonville
-        et communes alentours.
-      </p>
-
-      <p>
-        📞 Appelez-nous pour connaître les disponibilités et les modalités.
-      </p>
-
-      <a class="cta" href="tel:+33745117867">📞 Appeler pour vérifier la disponibilité : 07 45 11 78 67</a>
-    </section>
-
-    <footer>
-      © Candidalib – Voiture double commande avec accompagnateur qualifié à Toulouse
-    </footer>
-
+    </div>
   </div>
+
+  <!-- IMAGE -->
+  <section style="padding: 0; margin: -60px 0 0;">
+    <div class="container">
+      <div class="image-box" style="max-width: 900px; margin: 0 auto;">
+        <img src="assets/clio.jpg" alt="Voiture auto-école Candidalib">
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLÈME -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Le Problème</span>
+        <h2>Vous êtes bloqué dans votre formation</h2>
+        <p class="section-desc">
+          Des milliers de candidats rencontrent les mêmes difficultés
+        </p>
+      </div>
+      
+      <div class="grid">
+        <div class="card">
+          <span class="card-icon">⏳</span>
+          <h3>Délais interminables</h3>
+          <p>Impossible de placer vos heures, planning saturé pendant des semaines</p>
+        </div>
+        
+        <div class="card">
+          <span class="card-icon">💸</span>
+          <h3>Tarifs prohibitifs</h3>
+          <p>45-60€ l'heure supplémentaire, votre budget explose</p>
+        </div>
+        
+        <div class="card">
+          <span class="card-icon">😤</span>
+          <h3>Frustration</h3>
+          <p>Vous êtes motivé mais le système vous ralentit</p>
+        </div>
+      </div>
+      
+      <div class="highlight">
+        <p>👉 Vous êtes prêt à conduire, mais impossible de pratiquer</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section style="background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">La Solution</span>
+        <h2>Une alternative simple et légale</h2>
+      </div>
+      
+      <div class="image-feature">
+        <div class="image-box">
+          <img src="assets/clio-interieur-1.png" alt="Intérieur voiture">
+        </div>
+        <div>
+          <h3 style="font-size: 1.75rem; margin-bottom: 24px;">Location + Accompagnateur inclus</h3>
+          <p style="margin-bottom: 24px;">
+            <strong>Candidalib</strong> vous propose la location d'une voiture double commande moderne et conforme, 
+            avec un accompagnateur qualifié présent à chaque session.
+          </p>
+          <p>
+            Plus besoin d'attendre des semaines. Réservez quand vous voulez, au tarif que vous méritez.
+          </p>
+        </div>
+      </div>
+      
+      <div style="margin-top: 80px;">
+        <h3 style="text-align: center; font-size: 1.75rem; margin-bottom: 40px;">Ce que vous obtenez</h3>
+        
+        <div class="feature-list">
+          <div class="feature-item">
+            <span class="feature-icon">🚗</span>
+            <div class="feature-text">
+              <strong>Voiture récente double commande</strong> conforme examen, assurance complète
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <span class="feature-icon">👨‍🏫</span>
+            <div class="feature-text">
+              <strong>Accompagnateur qualifié</strong> présent à chaque session, formé et expérimenté
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <span class="feature-icon">📅</span>
+            <div class="feature-text">
+              <strong>Horaires flexibles</strong> adaptés à votre emploi du temps, pas d'attente
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <span class="feature-icon">💰</span>
+            <div class="feature-text">
+              <strong>Tarifs transparents</strong> bien plus avantageux que les auto-écoles
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <span class="feature-icon">🤝</span>
+            <div class="feature-text">
+              <strong>Sans engagement</strong> ni pression commerciale, vous décidez
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POURQUOI ÇA MARCHE -->
+  <section>
+    <div class="container">
+      <div class="image-feature" style="direction: rtl;">
+        <div class="image-box">
+          <img src="assets/apprendre-conduire-paris.jpeg" alt="Apprentissage">
+        </div>
+        <div style="direction: ltr;">
+          <span class="section-label">Efficace</span>
+          <h2 style="text-align: left;">Pourquoi ça marche</h2>
+          <p style="margin-bottom: 20px;">
+            Nos accompagnateurs sont formés pour vous mettre en confiance et vous aider à progresser rapidement.
+          </p>
+          <p>
+            Vous conduisez dans les mêmes conditions que le jour de l'examen : véhicule homologué, 
+            double commande, parcours d'examen locaux.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONES COUVERTES -->
+  <section style="background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">📍 Service Local</span>
+        <h2>Toulouse & agglomération</h2>
+        <p class="section-desc">
+          Voiture double commande avec accompagnateur qualifié disponible dans toute l'agglomération toulousaine
+        </p>
+      </div>
+      
+      <div class="location-grid">
+        <div class="location-card">
+          <span class="location-icon">🏙️</span>
+          <h3>Toulouse Centre</h3>
+          <p style="margin: 0; font-size: 0.9375rem;">Tous quartiers</p>
+        </div>
+        
+        <div class="location-card">
+          <span class="location-icon">✈️</span>
+          <h3>Blagnac</h3>
+          <p style="margin: 0; font-size: 0.9375rem;">Proche aéroport</p>
+        </div>
+        
+        <div class="location-card">
+          <span class="location-icon">🌳</span>
+          <h3>Colomiers</h3>
+          <p style="margin: 0; font-size: 0.9375rem;">Et communes ouest</p>
+        </div>
+        
+        <div class="location-card">
+          <span class="location-icon">🏘️</span>
+          <h3>Environs</h3>
+          <p style="margin: 0; font-size: 0.9375rem;">Tournefeuille, Balma, Ramonville...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <div class="container">
+    <div class="cta-section">
+      <h2>Prêt à reprendre votre formation ?</h2>
+      <p>Appelez-nous pour vérifier les disponibilités et les modalités</p>
+      <a class="cta" href="tel:+33745117867" style="background: #3b82f6; color: white;">
+        📞 07 45 11 78 67
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p style="font-size: 1.125rem; font-weight: 600; color: white; margin-bottom: 12px;">
+        🚗 Candidalib
+      </p>
+      <p>Voiture double commande avec accompagnateur qualifié à Toulouse</p>
+      <p style="font-size: 0.875rem; margin-top: 24px; opacity: 0.6;">
+        © 2025 Candidalib - Tous droits réservés
+      </p>
+    </div>
+  </footer>
 
 </body>
 </html>
