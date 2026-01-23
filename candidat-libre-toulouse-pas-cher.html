@@ -766,6 +766,8 @@
       .step-options { grid-template-columns: 1fr; }
       .step-title { font-size: 22px; }
       .step-description { font-size: 14px; }
+      #floating-bar .container { flex-direction: column; text-align: center; }
+      #floating-bar a { font-size: 14px !important; padding: 10px 25px !important; }
     }
   </style>
 </head>
@@ -838,6 +840,25 @@
             <span style="font-weight: 600;">Accompagnateur inclus</span>
           </p>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== BANDEAU FLOTTANT ========== -->
+  <div id="floating-bar" style="position: fixed; top: 0; left: 0; right: 0; background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.1); padding: 15px 0; z-index: 9998; transform: translateY(-100%); transition: transform 0.3s ease-in-out;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+      <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+        <span style="font-weight: 700; color: #1e40af; font-size: 18px;">Candidalib</span>
+       
+      </div>
+      <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+        <a href="tel:+33745117867" style="color: #2563eb; font-weight: 700; font-size: 16px; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+          <span>☎</span>
+          <span>07 45 11 78 67</span>
+        </a>
+        <a href="contact.html" style="background: linear-gradient(135deg, #2563eb, #3b82f6); color: white; padding: 12px 30px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 15px; box-shadow: 0 4px 15px rgba(37,99,235,0.3); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(37,99,235,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(37,99,235,0.3)'">
+          Nous contacter
+        </a>
       </div>
     </div>
   </div>
@@ -1331,6 +1352,21 @@
         e.preventDefault();
         document.getElementById('tunnel').scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
+    });
+
+    // Bandeau flottant au scroll
+    const floatingBar = document.getElementById('floating-bar');
+    const hero = document.querySelector('.hero');
+    
+    window.addEventListener('scroll', function() {
+      const heroBottom = hero.offsetTop + hero.offsetHeight;
+      const scrollPosition = window.scrollY;
+      
+      if (scrollPosition > heroBottom) {
+        floatingBar.style.transform = 'translateY(0)';
+      } else {
+        floatingBar.style.transform = 'translateY(-100%)';
+      }
     });
   </script>
 
