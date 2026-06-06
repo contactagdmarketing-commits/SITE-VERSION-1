@@ -253,6 +253,7 @@ body {
     height: 60px; /* Reduced by half as requested (from original size) */
     width: auto;
     object-fit: contain;
+    mix-blend-mode: multiply;
 }
 
 .nav-menu {
