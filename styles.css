@@ -297,13 +297,7 @@ body {
 
 /* Floating CTA Bar - Premium Design */
 .floating-cta {
-    position: relative;
-    background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 50%, var(--primary-800) 100%);
-    color: var(--text-inverse);
-    padding: var(--space-4) 0;
-    box-shadow: var(--shadow-md);
-    overflow: hidden;
-    margin-top: var(--space-4);
+    display: none;
 }
 
 .floating-cta::before {
