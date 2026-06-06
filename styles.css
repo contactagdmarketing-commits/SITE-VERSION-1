@@ -444,7 +444,7 @@ body {
 .hero {
     background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 50%, var(--primary-900) 100%);
     color: var(--text-inverse);
-    padding: 2.4rem 0 2rem;
+    padding: 2.4rem 0 2rem !important;
     text-align: center;
     position: relative;
     overflow: hidden;
