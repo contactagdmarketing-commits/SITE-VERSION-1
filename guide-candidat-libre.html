@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Guide complet : passer son permis en candidat libre à Toulouse | Candidalib</title>
+    <meta name="description" content="Guide complet pour passer son permis de conduire en candidat libre à Toulouse : NEPH, code de la route, heures de conduite, examen. Candidalib vous accompagne de A à Z.">
+    <link rel="canonical" href="https://candidalib.fr/guide-candidat-libre.html">
+    <meta property="og:title" content="Guide complet : passer son permis en candidat libre à Toulouse | Candidalib">
+    <meta property="og:description" content="Tout ce qu'il faut savoir pour passer son permis en candidat libre à Toulouse : NEPH, code, heures de conduite avec Candidalib, examen.">
+    <meta property="og:url" content="https://candidalib.fr/guide-candidat-libre.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+        }
+        .guide-hero h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .guide-hero p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .guide-body {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        .guide-section {
+            margin-bottom: 60px;
+        }
+        .guide-section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .guide-step-num {
+            background: #2563eb;
+            color: white;
+            font-weight: 800;
+            font-size: 1rem;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .guide-step-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1e293b;
+        }
+        .guide-section p {
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 14px;
+            font-size: 1rem;
+        }
+        .guide-section ul {
+            color: #475569;
+            line-height: 1.8;
+            padding-left: 24px;
+            margin-bottom: 14px;
+        }
+        .guide-section ul li {
+            margin-bottom: 6px;
+        }
+        .guide-highlight {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            border-radius: 8px;
+            padding: 16px 20px;
+            color: #1e40af;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin: 20px 0;
+        }
+        .guide-highlight strong {
+            color: #1e3a8a;
+        }
+        .guide-cta-inline {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+        .guide-cta-inline:hover {
+            background: #1d4ed8;
+        }
+        .avantages-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .avantage-card {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .avantage-card h4 {
+            color: #166534;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        .avantage-card p {
+            color: #15803d;
+            font-size: 0.88rem;
+            margin: 0;
+        }
+        .inconvenient-card {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .inconvenient-card h4 {
+            color: #9a3412;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        .inconvenient-card p {
+            color: #c2410c;
+            font-size: 0.88rem;
+            margin: 0;
+        }
+        .app-badge {
+            display: inline-block;
+            background: #1e293b;
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin: 4px 4px 4px 0;
+        }
+        .tarif-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .tarif-row:last-child {
+            border-bottom: none;
+        }
+        .tarif-name {
+            font-weight: 600;
+            color: #1e293b;
+        }
+        .tarif-price {
+            font-weight: 800;
+            color: #2563eb;
+            font-size: 1.1rem;
+        }
+        @media (max-width: 600px) {
+            .avantages-grid { grid-template-columns: 1fr; }
+            .guide-hero h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="index.html" class="logo">
+                        <img src="assets/logocandi.jpg" alt="Candidalib" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="vehicules.html" class="nav-link">Nos véhicules</a></li>
+                    <li><a href="candidat-libre.html" class="nav-link">Candidat libre</a></li>
+                    <li><a href="methode.html" class="nav-link">Notre méthode</a></li>
+                    <li><a href="guide-candidat-libre.html" class="nav-link active">Guide candidat libre</a></li>
+                    <li><a href="tunnel.html" class="nav-link btn-nav">Inscription</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <div class="guide-hero">
+        <div class="container">
+            <h1>Guide complet : passer son permis en candidat libre à Toulouse</h1>
+            <p>Tout ce qu'il faut savoir, étape par étape, pour réussir votre permis sans auto-école.</p>
+        </div>
+    </div>
+
+    <div class="guide-body">
+
+        <!-- Section 1 -->
+        <div class="guide-section">
+            <div class="guide-section-header">
+                <div class="guide-step-num" style="background:#1e293b;">✦</div>
+                <div class="guide-step-title">Qu'est-ce que le permis en candidat libre ?</div>
+            </div>
+            <p>Le candidat libre passe son permis de conduire sans être inscrit dans une auto-école. Il gère lui-même l'intégralité de son parcours : inscription administrative, préparation du code, heures de conduite pratique et inscription à l'examen.</p>
+            <p>Cette voie est légale, de plus en plus choisie, et peut représenter une économie significative par rapport au circuit traditionnel en auto-école.</p>
+
+            <div class="avantages-grid">
+                <div class="avantage-card">
+                    <h4>✓ Liberté totale</h4>
+                    <p>Vous choisissez votre rythme, vos horaires et vos prestataires sans dépendre d'une structure unique.</p>
+                </div>
+                <div class="avantage-card">
+                    <h4>✓ Économies importantes</h4>
+                    <p>Pas de forfait auto-école obligatoire. Vous ne payez que ce dont vous avez besoin.</p>
+                </div>
+                <div class="inconvenient-card">
+                    <h4>⚠ Organisation personnelle</h4>
+                    <p>Vous devez gérer vous-même chaque étape administrative et logistique du parcours.</p>
+                </div>
+                <div class="inconvenient-card">
+                    <h4>⚠ Trouver un accompagnateur</h4>
+                    <p>La loi exige un accompagnateur titulaire du permis depuis plus de 5 ans lors des sessions de conduite.</p>
+                </div>
+            </div>
+
+            <div class="guide-highlight">
+                <strong>Candidalib vous accompagne de A à Z.</strong> Véhicule double commande homologué, accompagnateur expérimenté fourni, support d'aide à la préparation de l'examen de conduite en 23 modules, et accompagnement possible le jour de l'examen.
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="guide-section">
+            <div class="guide-section-header">
+                <div class="guide-step-num">1</div>
+                <div class="guide-step-title">Étape 1 — Obtenir son NEPH</div>
+            </div>
+            <p>Le <strong>NEPH</strong> (Numéro d'Enregistrement Préfectoral Harmonisé) est votre numéro d'immatriculation au fichier national des conducteurs. Il est indispensable pour s'inscrire à l'épreuve théorique (code) et à l'épreuve pratique.</p>
+            <p><strong>Comment l'obtenir :</strong></p>
+            <ul>
+                <li>Rendez-vous sur <strong>ants.gouv.fr</strong> rubrique "Permis de conduire"</li>
+                <li>Créez votre compte et remplissez le formulaire de demande d'inscription au permis de conduire</li>
+                <li>Fournissez une pièce d'identité valide, un justificatif de domicile et une photo d'identité numérique</li>
+                <li>La démarche est <strong>entièrement en ligne, gratuite</strong> et prend environ 10 minutes</li>
+            </ul>
+            <p>Le NEPH vous est attribué immédiatement après validation de votre dossier. Conservez-le précieusement, il vous sera demandé à chaque étape.</p>
+            <div class="guide-highlight">
+                <strong>Délai :</strong> Quelques jours ouvrés pour la validation du dossier. Anticipez avant de commencer votre préparation au code.
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="guide-section">
+            <div class="guide-section-header">
+                <div class="guide-step-num">2</div>
+                <div class="guide-step-title">Étape 2 — Passer le code de la route</div>
+            </div>
+            <p>L'épreuve théorique générale (ETG), communément appelée "le code", est la première étape à valider avant de pouvoir passer l'épreuve pratique.</p>
+            <p><strong>Conditions :</strong></p>
+            <ul>
+                <li>Avoir obtenu son NEPH</li>
+                <li>Avoir au moins 17 ans</li>
+                <li>S'inscrire via un centre agréé ou en ligne sur la plateforme officielle</li>
+            </ul>
+            <p><strong>Déroulé de l'épreuve :</strong> 40 questions à choix multiples sur écran, en 35 minutes. Le score minimum requis est de <strong>35/40</strong>. En cas d'échec, vous pouvez vous réinscrire après un délai de 8 jours.</p>
+            <p><strong>Applications recommandées pour se préparer :</strong></p>
+            <div>
+                <span class="app-badge">iCode</span>
+                <span class="app-badge">Permis.fr</span>
+                <span class="app-badge">En Voiture Simone</span>
+                <span class="app-badge">Codelaroute.fr</span>
+            </div>
+            <div class="guide-highlight" style="margin-top:20px;">
+                <strong>Conseil :</strong> Visez 38-39/40 en entraînement avant de vous présenter à l'examen. La marge de sécurité est faible avec 35/40 requis.
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="guide-section">
+            <div class="guide-section-header">
+                <div class="guide-step-num">3</div>
+                <div class="guide-step-title">Étape 3 — Les heures de conduite avec Candidalib</div>
+            </div>
+            <p>Une fois le code validé, vous pouvez commencer vos heures de conduite pratique. C'est ici que Candidalib intervient.</p>
+            <p>Candidalib met à votre disposition un <strong>véhicule à double commande homologué</strong> — identique à ceux utilisés en auto-école — ainsi qu'un <strong>accompagnateur expérimenté</strong> titulaire du permis depuis plus de 5 ans.</p>
+            <p>L'accompagnateur s'appuie sur un <strong>support d'aide à la préparation de l'examen de conduite en 23 modules</strong> répartis en 6 phases progressives, pour vous guider de la prise en main du véhicule jusqu'à la simulation d'examen blanc.</p>
+
+            <p><strong>Nos tarifs :</strong></p>
+            <div style="border:1px solid #e2e8f0;border-radius:12px;padding:0 20px;margin-bottom:20px;">
+                <div class="tarif-row">
+                    <span class="tarif-name">Session 1 heure</span>
+                    <span class="tarif-price">45 €</span>
+                </div>
+                <div class="tarif-row">
+                    <span class="tarif-name">Forfait 10 heures</span>
+                    <span class="tarif-price">400 € <span style="font-size:0.8rem;color:#64748b;font-weight:400;">(40€/h)</span></span>
+                </div>
+                <div class="tarif-row">
+                    <span class="tarif-name">Présentation à l'examen</span>
+                    <span class="tarif-price">80 €</span>
+                </div>
+            </div>
+
+            <p>L'accompagnateur connaît les <strong>parcours d'examen de Toulouse, Colomiers et Muret</strong>. Vous vous entraînez directement sur les itinéraires réels de votre centre d'examen.</p>
+            <a href="methode.html" class="guide-cta-inline">Voir le support d'aide à la préparation en 23 modules →</a>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="guide-section">
+            <div class="guide-section-header">
+                <div class="guide-step-num">4</div>
+                <div class="guide-step-title">Étape 4 — Réserver et passer l'examen</div>
+            </div>
+            <p>Pour réserver votre place à l'examen pratique, vous devez passer par la plateforme <strong>RDVPermis</strong> (rdvpermis.fr). Les places sont limitées et parfois rares : surveillez régulièrement les disponibilités ou utilisez une application de détection de créneaux.</p>
+            <p><strong>Documents à apporter le jour J :</strong></p>
+            <ul>
+                <li>Pièce d'identité valide</li>
+                <li>Convocation à l'examen</li>
+                <li>NEPH</li>
+                <li>Attestation de validité du code (si exigée)</li>
+            </ul>
+            <p><strong>Déroulé de l'épreuve pratique :</strong> L'inspecteur du permis de conduire prend place dans le véhicule et évalue votre conduite pendant environ 32 minutes. Il observe notamment :</p>
+            <ul>
+                <li>La maîtrise du véhicule et la sécurité</li>
+                <li>L'application du code de la route</li>
+                <li>La gestion des situations de conduite (intersections, ronds-points, manœuvres)</li>
+                <li>Le comportement général et la communication avec les autres usagers</li>
+            </ul>
+            <div class="guide-highlight">
+                <strong>Accompagnement le jour J avec Candidalib (80 €) :</strong> Notre accompagnateur vous retrouve le matin de l'examen, effectue un échauffement sur les parcours, puis vous conduit jusqu'au centre d'examen avec le véhicule double commande. Vous arrivez serein et sur un véhicule que vous connaissez.
+            </div>
+            <a href="contact.html" class="guide-cta-inline">Réserver votre accompagnement examen →</a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">CANDIDALIB</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Découvrez-nous</a></li>
+                        <li><a href="index.html">Notre Concept</a></li>
+                        <li><a href="vehicules.html">Nos véhicules</a></li>
+                        <li><a href="index.html">Nos tarifs</a></li>
+                        <li><a href="candidat-libre.html">Candidat libre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">L'actualité</h3>
+                    <ul class="footer-links">
+                        <li><a href="mentions-legales.html">Mentions Légales</a></li>
+                        <li><a href="cgu.html">CGU</a></li>
+                        <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Où nous trouver</h3>
+                    <ul class="footer-links">
+                        <li>Toulouse (31100)</li>
+                        <li>Métro Basso Cambo</li>
+                        <li>Zone couverte : 30 min autour de Toulouse</li>
+                        <li><a href="tel:0745117867">07 45 11 78 67</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Candidalib. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
