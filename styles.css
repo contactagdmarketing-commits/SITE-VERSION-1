@@ -297,7 +297,9 @@ body {
 
 /* Floating CTA Bar - Premium Design */
 .floating-cta {
-    display: none;
+    background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 50%, var(--primary-800) 100%);
+    color: var(--text-inverse);
+    padding: var(--space-4) 0;
 }
 
 .floating-cta::before {
