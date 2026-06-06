@@ -207,8 +207,7 @@ body {
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(20px) saturate(180%);
     box-shadow: var(--shadow-md), 0 0 60px rgba(37, 99, 235, 0.05);
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 1000;
     transition: all var(--transition-smooth);
 }
