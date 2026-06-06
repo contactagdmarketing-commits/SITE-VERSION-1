@@ -258,7 +258,7 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: var(--space-8);
+    gap: var(--space-5);
     align-items: center;
 }
 
@@ -266,10 +266,11 @@ body {
     color: var(--text-secondary);
     text-decoration: none;
     font-weight: 500;
-    font-size: var(--text-sm);
+    font-size: 0.8rem;
     transition: all var(--transition-smooth);
     position: relative;
     padding: var(--space-2) 0;
+    white-space: nowrap;
 }
 
 .nav-link::before {
