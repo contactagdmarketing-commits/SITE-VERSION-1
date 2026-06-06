@@ -163,15 +163,6 @@ if (mainInteriorImage) {
     mainInteriorImage.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
 }
 
-// Parallax effect for hero section
-const hero = document.querySelector('.hero');
-if (hero) {
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const parallaxSpeed = 0.5;
-        hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-    });
-}
 
 // Enhanced header scroll effect
 let lastScroll = 0;
