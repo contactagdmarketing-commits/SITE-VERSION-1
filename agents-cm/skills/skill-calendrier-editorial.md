@@ -88,3 +88,39 @@ Quand tu génères un calendrier :
 3. Respecte l'alternance des 4 piliers (Éducation 40% / Preuve sociale 25% / Coulisses 20% / Offre 15%)
 4. Produis le calendrier en tableau Markdown avec : Jour | Réseau | Thème | Format | Accroche suggérée
 5. Pour chaque post, indique le pilier éditorial correspondant
+
+---
+
+## Convention de nommage — Images et fichiers texte
+
+**Règle absolue : le nom de l'image doit être identique à l'intitulé de la section dans le fichier draft.**
+
+### Format du nom
+```
+[jour]-[réseau].png
+[jour]-[réseau]-[type].png   ← si plusieurs posts le même jour sur le même réseau
+```
+
+### Exemples
+| Image | Section dans le draft |
+|---|---|
+| `lundi-instagram.png` | `## LUNDI — Instagram` |
+| `jeudi-instagram.png` | `## JEUDI — Instagram` |
+| `vendredi-facebook.png` | `## VENDREDI — Facebook` |
+| `samedi-instagram-story.png` | `## SAMEDI — Instagram Story` |
+| `mardi-tiktok.png` | `## MARDI — TikTok` |
+| `mercredi-google-business.png` | `## MERCREDI — Google Business` |
+
+### Réseaux acceptés dans les noms
+- `instagram`
+- `facebook`
+- `tiktok`
+- `google-business`
+
+### Règles
+- Tout en minuscules
+- Pas d'espaces — utiliser des tirets `-`
+- Pas de dates dans le nom (la date est dans le nom du dossier/fichier draft)
+- Le fichier draft de la semaine suit le format : `semaine[N]-[mois][année].md` (ex: `semaine1-juin2026.md`)
+- Les images vont dans `outputs/images/`
+- Les drafts vont dans `outputs/drafts/`

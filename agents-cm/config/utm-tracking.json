@@ -1,0 +1,30 @@
+{
+  "base_url": "https://candidalib.fr",
+  "pages": {
+    "accueil": "https://candidalib.fr",
+    "tarifs": "https://candidalib.fr#tarifs",
+    "methode": "https://candidalib.fr/methode.html",
+    "guide": "https://candidalib.fr/guide-candidat-libre.html",
+    "contact": "https://candidalib.fr/contact.html",
+    "inscription": "https://candidalib.fr/tunnel.html"
+  },
+  "utm_sources": {
+    "instagram": "instagram",
+    "facebook": "facebook",
+    "tiktok": "tiktok",
+    "google_business": "google_business"
+  },
+  "utm_mediums": {
+    "post": "social_post",
+    "story": "story",
+    "reels": "reels",
+    "bio": "bio"
+  },
+  "utm_campaigns": {
+    "semaine1_juin": "semaine1_juin2026",
+    "education": "education",
+    "conversion": "conversion",
+    "temoignage": "temoignage"
+  },
+  "exemple_lien_tracke": "https://candidalib.fr/tunnel.html?utm_source=instagram&utm_medium=social_post&utm_campaign=semaine1_juin2026"
+}
