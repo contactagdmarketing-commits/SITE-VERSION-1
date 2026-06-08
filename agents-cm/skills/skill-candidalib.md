@@ -125,4 +125,5 @@ Véhicule double commande homologué (Renault Clio 5, boîte manuelle) + accompa
 2. TOUJOURS mentionner Toulouse (ou une ville de la zone) dans les posts géolocalisés
 3. TOUJOURS finir par un appel à l'action : lien bio, numéro, ou "envoie-nous un message"
 4. NE JAMAIS promettre la réussite à l'examen (responsabilité légale)
-5. Utiliser des emojis avec modération — 1 à 3 max par post
+5. ZÉRO émoji et ZÉRO émoticône dans les visuels générés (prompts images) — ça fait IA, nuit à la crédibilité
+6. Dans les légendes et textes de posts : emojis tolérés avec parcimonie (1-2 max, jamais en début de phrase)
