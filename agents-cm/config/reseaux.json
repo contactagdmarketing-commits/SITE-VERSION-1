@@ -1,0 +1,40 @@
+{
+  "note": "Remplace les valeurs YOUR_... par tes vraies clés API. Ne jamais committer ce fichier avec de vraies clés.",
+  "instagram": {
+    "plateforme": "Meta Graph API",
+    "compte": "@candidalib",
+    "access_token": "YOUR_META_ACCESS_TOKEN",
+    "page_id": "YOUR_INSTAGRAM_BUSINESS_PAGE_ID",
+    "actif": false,
+    "doc": "https://developers.facebook.com/docs/instagram-api"
+  },
+  "facebook": {
+    "plateforme": "Meta Graph API",
+    "page_name": "Candidalib Toulouse",
+    "page_id": "YOUR_FACEBOOK_PAGE_ID",
+    "access_token": "YOUR_META_ACCESS_TOKEN",
+    "actif": false
+  },
+  "tiktok": {
+    "plateforme": "TikTok for Business API",
+    "compte": "@candidalib",
+    "access_token": "YOUR_TIKTOK_ACCESS_TOKEN",
+    "actif": false,
+    "note": "L'API TikTok est restrictive — le posting auto nécessite un compte Business vérifié",
+    "doc": "https://developers.tiktok.com/doc/content-posting-api-get-started"
+  },
+  "google_business": {
+    "plateforme": "Google Business Profile API",
+    "place_id": "YOUR_GOOGLE_PLACE_ID",
+    "account_id": "YOUR_GOOGLE_BUSINESS_ACCOUNT_ID",
+    "actif": false,
+    "doc": "https://developers.google.com/my-business/reference/rest"
+  },
+  "buffer": {
+    "plateforme": "Buffer API (alternative plus simple)",
+    "access_token": "YOUR_BUFFER_ACCESS_TOKEN",
+    "actif": false,
+    "note": "Buffer permet de programmer sur Instagram + Facebook + TikTok sans gérer les APIs directement",
+    "doc": "https://buffer.com/developers/api"
+  }
+}
