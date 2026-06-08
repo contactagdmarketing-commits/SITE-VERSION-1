@@ -5,7 +5,7 @@
 
 ## LUNDI — Instagram
 **Pilier : Éducation**
-**Image** : `lundi-instagram.png` (fond bleu "Tu savais que...")
+**Image** : `lundi-8-juin-instagram.png` (fond bleu "Tu savais que...")
 
 **Légende à copier-coller :**
 ```
@@ -78,7 +78,7 @@ Réservez votre première session : 07 45 11 78 67
 
 ## JEUDI — Instagram
 **Pilier : Éducation — Comparatif**
-**Image** : `jeudi-instagram.png` (tableau comparatif Candidalib vs Auto-école)
+**Image** : `jeudi-11-juin-instagram.png` (tableau comparatif Candidalib vs Auto-école)
 
 **Légende à copier-coller :**
 ```
@@ -102,7 +102,7 @@ Commente "INFO" et je t'envoie le guide complet en DM 📩
 
 ## VENDREDI — Facebook
 **Pilier : Éducation — Pour les parents**
-**Image** : `vendredi-facebook.png` (Clio 5 fond bleu)
+**Image** : `vendredi-12-juin-facebook.png` (Clio 5 fond bleu)
 
 **Post Facebook à copier-coller :**
 ```
@@ -128,7 +128,7 @@ Ou visitez notre site : candidalib.fr
 
 ## SAMEDI — Instagram Story
 **Pilier : Conversion**
-**Image** : `samedi-instagram-story.png` (Les 5 étapes)
+**Image** : `samedi-13-juin-instagram-story.png` (Les 5 étapes)
 
 **Texte story (overlay sur l'image)** :
 ```
@@ -158,10 +158,10 @@ Où t'en es dans ton parcours permis ? 👇
 
 | Fichier | Utilisé pour |
 |---|---|
-| `vendredi-facebook.png` | Post principal Clio 5 + "Passez votre permis" |
-| `lundi-instagram.png` | Lundi Instagram — "Tu savais que..." |
-| `jeudi-instagram.png` | Jeudi Instagram — Comparatif Candidalib vs Auto-école |
-| `samedi-instagram-story.png` | Samedi Story — Les 5 étapes |
+| `vendredi-12-juin-facebook.png` | Post principal Clio 5 + "Passez votre permis" |
+| `lundi-8-juin-instagram.png` | Lundi Instagram — "Tu savais que..." |
+| `jeudi-11-juin-instagram.png` | Jeudi Instagram — Comparatif Candidalib vs Auto-école |
+| `samedi-13-juin-instagram-story.png` | Samedi Story — Les 5 étapes |
 
 ---
 *Généré le 08/06/2026 — Semaine 1 campagne juin 2026*
