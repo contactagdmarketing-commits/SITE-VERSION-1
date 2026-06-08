@@ -93,23 +93,23 @@ Quand tu génères un calendrier :
 
 ## Convention de nommage — Images et fichiers texte
 
-**Règle absolue : le nom de l'image doit être identique à l'intitulé de la section dans le fichier draft.**
+**Règle absolue : le nom de l'image et l'intitulé de la section dans le draft doivent inclure le jour ET la date précise.**
 
 ### Format du nom
 ```
-[jour]-[réseau].png
-[jour]-[réseau]-[type].png   ← si plusieurs posts le même jour sur le même réseau
+[jour]-[date]-[mois]-[réseau].jpg
+[jour]-[date]-[mois]-[réseau]-[type].jpg   ← si plusieurs posts le même jour sur le même réseau
 ```
 
 ### Exemples
 | Image | Section dans le draft |
 |---|---|
-| `lundi-instagram.png` | `## LUNDI — Instagram` |
-| `jeudi-instagram.png` | `## JEUDI — Instagram` |
-| `vendredi-facebook.png` | `## VENDREDI — Facebook` |
-| `samedi-instagram-story.png` | `## SAMEDI — Instagram Story` |
-| `mardi-tiktok.png` | `## MARDI — TikTok` |
-| `mercredi-google-business.png` | `## MERCREDI — Google Business` |
+| `lundi-29-juin-instagram.jpg` | `## LUNDI 29 JUIN — Instagram` |
+| `jeudi-2-juillet-instagram.jpg` | `## JEUDI 2 JUILLET — Instagram` |
+| `vendredi-3-juillet-facebook.jpg` | `## VENDREDI 3 JUILLET — Facebook` |
+| `samedi-4-juillet-instagram-story.jpg` | `## SAMEDI 4 JUILLET — Instagram Story` |
+| `mardi-30-juin-tiktok.jpg` | `## MARDI 30 JUIN — TikTok` |
+| `mercredi-1-juillet-google-business.jpg` | `## MERCREDI 1 JUILLET — Google Business` |
 
 ### Réseaux acceptés dans les noms
 - `instagram`
@@ -120,7 +120,7 @@ Quand tu génères un calendrier :
 ### Règles
 - Tout en minuscules
 - Pas d'espaces — utiliser des tirets `-`
-- Pas de dates dans le nom (la date est dans le nom du dossier/fichier draft)
-- Le fichier draft de la semaine suit le format : `semaine[N]-[mois][année].md` (ex: `semaine1-juin2026.md`)
-- Les images vont dans `outputs/images/`
+- La date précise est OBLIGATOIRE dans le nom (ex: `29-juin`, `3-juillet`)
+- Le fichier draft suit le format : `semaine[N]-[mois][année].md` (ex: `semaine1-juillet2026.md`)
+- Les images vont dans `outputs/images/[mois][année]/semaine[N]/`
 - Les drafts vont dans `outputs/drafts/`
