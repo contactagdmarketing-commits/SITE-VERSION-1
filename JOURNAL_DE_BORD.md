@@ -205,3 +205,14 @@ Agent CM, Orchestrateur, corrections visuels, ce journal).
 bien exclu par `.gitignore`, aucun secret dans `.nano-banana-config.json` ni `.claude/`.
 **Où** : commit `79722be` (`097ffea..79722be main -> main`), remote `github.com/contactagdmarketing-commits/SITE-VERSION-1`.
 **Comment** : `git add -A` puis commit + `git push`. Branche `main` (convention du repo : commits directs sur main).
+
+## 2026-06-26 — Mention RGPD des outils de tracking (catégorie : Sécu / Légal) [par : Claude]
+**Quoi** : Réécriture de la section 8 « Cookies » de `confidentialite.html` : distinction cookies
+techniques / mesure d'audience, déclaration de Google Analytics 4 + Microsoft Clarity + Meta Pixel,
+consentement préalable, transfert hors UE encadré, modalités de retrait du consentement. Date de mise
+à jour passée à « Juin 2026 ».
+**Pourquoi** : Obligation RGPD — déclarer les outils de tracking ajoutés le même jour (l'ancienne section
+disait à tort que le site ne collectait pas de données).
+**Où** : `confidentialite.html` (section 8).
+**Comment** : Texte dans `.legal-content`. HTML validé (balises équilibrées). Reste à faire pour finir
+la page contact : poser la clé Web3Forms (placeholder `VOTRE_CLE_WEB3FORMS` dans `contact.html`).
