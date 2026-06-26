@@ -2786,3 +2786,102 @@ body {
         font-size: 3.5rem;
     }
 }
+
+
+/* ============================================
+   Formulaire "Être rappelé" (page contact)
+   ============================================ */
+.callback-card {
+    margin-top: var(--space-12);
+    padding: var(--space-10) var(--space-8);
+    background: var(--bg-primary);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+}
+
+.callback-title {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.callback-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-8);
+}
+
+.callback-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: 440px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.callback-form input[type="text"],
+.callback-form input[type="tel"],
+.callback-form select {
+    width: 100%;
+    padding: var(--space-4);
+    font-family: inherit;
+    font-size: var(--text-base);
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    border: 1.5px solid var(--neutral-200);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.callback-form input::placeholder {
+    color: var(--neutral-400);
+}
+
+.callback-form input:focus,
+.callback-form select:focus {
+    outline: none;
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.callback-form select {
+    cursor: pointer;
+    padding-right: var(--space-10);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23737373' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--space-4) center;
+}
+
+.callback-consent {
+    display: flex;
+    gap: var(--space-2);
+    align-items: flex-start;
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.callback-consent input {
+    margin-top: 3px;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-600);
+}
+
+.callback-submit {
+    width: 100%;
+    margin-top: var(--space-2);
+}
+
+.callback-message {
+    text-align: center;
+    margin: 0;
+    min-height: 1.2em;
+    font-weight: 600;
+}

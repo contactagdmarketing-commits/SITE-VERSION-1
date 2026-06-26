@@ -1,0 +1,34 @@
+[
+  {
+    "id": "cmnt_001",
+    "type": "commentaire_facebook",
+    "plateforme": "facebook",
+    "auteur": "Lucas Martin",
+    "message": "Bonjour, c'est quoi exactement la différence avec une auto-école classique ?",
+    "date": "2026-06-08T10:23:00"
+  },
+  {
+    "id": "cmnt_002",
+    "type": "commentaire_instagram",
+    "plateforme": "instagram",
+    "auteur": "amelie_toulouse31",
+    "message": "J'ai passé mon permis avec vous en mars, merci beaucoup ! Je le recommande a tout le monde",
+    "date": "2026-06-08T14:05:00"
+  },
+  {
+    "id": "msg_001",
+    "type": "message_prive",
+    "plateforme": "messenger",
+    "auteur": "Marie Dupont",
+    "message": "Bonjour, mon fils a 18 ans et vient d'avoir son NEPH. Il a validé le code il y a 2 mois. Est-ce que vous pouvez l'aider pour la pratique ? Quels sont vos tarifs ?",
+    "date": "2026-06-08T09:10:00"
+  },
+  {
+    "id": "cmnt_003",
+    "type": "commentaire_instagram",
+    "plateforme": "instagram",
+    "auteur": "kevin_permis",
+    "message": "C'est nul, j'ai raté mon examen après 5h avec vous...",
+    "date": "2026-06-07T18:42:00"
+  }
+]

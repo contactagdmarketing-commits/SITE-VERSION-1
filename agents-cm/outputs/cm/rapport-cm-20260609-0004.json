@@ -1,0 +1,67 @@
+[
+  {
+    "id": "cmnt_001",
+    "type": "commentaire_facebook",
+    "plateforme": "facebook",
+    "auteur": "Lucas Martin",
+    "message": "Bonjour, c'est quoi exactement la différence avec une auto-école classique ?",
+    "date": "2026-06-08T10:23:00",
+    "reponse_suggeree": "Bonjour Lucas,\n\nExcellente question ! La différence principale : Candidalib n'est pas une auto-école traditionnelle. Nous proposons un accompagnement à la préparation du permis en candidat libre avec un véhicule double commande homologué et un accompagnateur expérimenté qui connaît parfaitement les parcours d'examen de Toulouse, Colomiers et Muret.\n\nConcrètement : vous gérez vous-même votre inscription ANTS et la réservation de l'examen, et nous vous accompagnons pour la partie pratique au volant. Résultat : 30 à 50% d'économie par rapport à une auto-école classique, avec une vraie flexibilité dans les horaires.\n\nBesoin de plus de détails ? Appelez-nous au 07 45 11 78 67 ou rendez-vous sur candidalib.fr",
+    "statut": "en_attente_validation",
+    "genere_le": "2026-06-09T00:05:01.465709"
+  },
+  {
+    "id": "cmnt_002",
+    "type": "commentaire_instagram",
+    "plateforme": "instagram",
+    "auteur": "amelie_toulouse31",
+    "message": "J'ai passé mon permis avec vous en mars, merci beaucoup ! Je le recommande a tout le monde",
+    "date": "2026-06-08T14:05:00",
+    "reponse_suggeree": "Merci beaucoup Amélie ! On est vraiment ravis d'avoir pu t'accompagner dans ta préparation au permis en candidat libre. Ton soutien nous fait super plaisir et aide d'autres candidats libres de Toulouse à se lancer. N'hésite pas à revenir vers nous si besoin, et merci encore pour cette recommandation !",
+    "statut": "en_attente_validation",
+    "genere_le": "2026-06-09T00:05:05.308769"
+  },
+  {
+    "id": "msg_001",
+    "type": "message_prive",
+    "plateforme": "messenger",
+    "auteur": "Marie Dupont",
+    "message": "Bonjour, mon fils a 18 ans et vient d'avoir son NEPH. Il a validé le code il y a 2 mois. Est-ce que vous pouvez l'aider pour la pratique ? Quels sont vos tarifs ?",
+    "date": "2026-06-08T09:10:00",
+    "reponse_suggeree": "Bonjour Marie,\n\nOui, nous pouvons tout à fait accompagner votre fils dans sa préparation à l'examen pratique du permis en candidat libre. C'est parfait qu'il ait déjà validé son code et obtenu son NEPH, il ne lui reste plus qu'à s'entraîner pour l'examen de conduite.\n\nChez Candidalib, nous mettons à disposition un véhicule double commande homologué (Renault Clio 5) et un accompagnateur expérimenté qui connaît parfaitement les parcours d'examen de Toulouse, Colomiers et Muret.\n\nNos tarifs : 45€ de l'heure, forfait 10 heures à 400€, et nous proposons également un accompagnement le jour de l'examen pour 80€.\n\nN'hésitez pas à nous appeler au 07 45 11 78 67 pour échanger sur les besoins de votre fils et planifier une première session. Vous pouvez aussi retrouver toutes les informations sur candidalib.fr.\n\nÀ très bientôt,\nL'équipe Candidalib",
+    "statut": "en_attente_validation",
+    "genere_le": "2026-06-09T00:05:12.193500"
+  },
+  {
+    "id": "cmnt_003",
+    "type": "commentaire_instagram",
+    "plateforme": "instagram",
+    "auteur": "kevin_permis",
+    "message": "C'est nul, j'ai raté mon examen après 5h avec vous...",
+    "date": "2026-06-07T18:42:00",
+    "reponse_suggeree": "Bonjour Kevin,\n\nNous sommes sincèrement désolés que l'examen ne se soit pas passé comme tu l'espérais. L'échec à l'examen est toujours une déception, mais il est important de rappeler que 5 heures d'accompagnement restent un temps de préparation limité. La réussite à l'examen dépend de nombreux facteurs, et chaque candidat progresse à son propre rythme.\n\nNous serions ravis d'échanger avec toi pour comprendre ce qui s'est passé et voir comment nous pouvons t'aider à mieux préparer ta prochaine tentative. N'hésite pas à nous contacter directement au 07 45 11 78 67 ou en message privé.\n\nL'équipe Candidalib, Toulouse",
+    "statut": "en_attente_validation",
+    "genere_le": "2026-06-09T00:05:17.711284"
+  },
+  {
+    "type": "demande_avis_google",
+    "variante": 1,
+    "message": "# 3 Variantes de message pour demander un avis Google\n\n**Variante 1 — Ton neutre et professionnel**\n\nBonjour [Prénom],\n\nMerci d'avoir fait confiance à Candidalib pour votre préparation au permis en candidat libre. Si vous avez été satisfait de votre accompagnement, nous serions reconnaissants que vous partagiez votre expérience sur Google. Votre retour aide d'autres candidats libres de la région toulousaine à faire leur choix.\n\nLien direct : https://g.page/r/candidalib/review\n\nMerci d'avance pour votre soutien.\n\nL'équipe Candidalib",
+    "statut": "en_attente_validation",
+    "genere_le": "2026-06-09T00:05:27.235153"
+  },
+  {
+    "type": "demande_avis_google",
+    "variante": 2,
+    "message": "**Variante 2 — Ton enthousiaste et motivant**\n\nBonjour [Prénom],\n\nRavi d'avoir pu vous accompagner dans votre parcours vers le permis. Votre progression durant ces sessions a été remarquable. Si vous souhaitez partager votre expérience avec Candidalib, un avis Google serait formidable pour nous et très utile pour les futurs candidats libres de Toulouse.\n\nVoici le lien direct : https://g.page/r/candidalib/review\n\nMerci pour votre confiance.\n\nCandidalib — Toulouse",
+    "statut": "en_attente_validation",
+    "genere_le": "2026-06-09T00:05:27.235180"
+  },
+  {
+    "type": "demande_avis_google",
+    "variante": 3,
+    "message": "**Variante 3 — Ton reconnaissant et chaleureux**\n\nBonjour [Prénom],\n\nMerci d'avoir choisi Candidalib pour votre accompagnement en candidat libre. Votre avis compte beaucoup pour nous et aide réellement d'autres personnes qui hésitent encore à se lancer dans cette démarche à Toulouse. Si vous avez deux minutes, nous serions très reconnaissants que vous partagiez votre retour d'expérience sur Google.\n\nAccès direct : https://g.page/r/candidalib/review\n\nUn grand merci par avance.\n\nToute l'équipe Candidalib",
+    "statut": "en_attente_validation",
+    "genere_le": "2026-06-09T00:05:27.235184"
+  }
+]

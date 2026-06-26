@@ -90,7 +90,7 @@ Véhicule double commande homologué (Renault Clio 5, boîte manuelle) + accompa
 
 ## Arguments différenciants
 
-1. **Prix** : 45€/h vs 60-80€/h en auto-école = économie de 30-50%
+1. **Prix** : 45€/h vs 55-70€/h en auto-école = économie de 30-50%
 2. **Flexibilité** : horaires libres, pas d'attente de disponibilité moniteur
 3. **Connaissance terrain** : parcours d'examen connus (Toulouse, Colomiers, Muret)
 4. **Accompagnement complet** : de l'inscription ANTS jusqu'au jour de l'examen
