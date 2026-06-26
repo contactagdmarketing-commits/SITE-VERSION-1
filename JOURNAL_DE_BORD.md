@@ -197,3 +197,11 @@ depuis le début), avec recensement de la conversation et du repo (git log, fich
 **Où** : `JOURNAL_DE_BORD.md` (racine).
 **Comment** : Règle permanente : lire l'état actuel en début de session, ajouter en bas à chaque avancée,
 ne jamais réécrire. À committer dans git.
+
+## 2026-06-26 — Sauvegarde Git du travail de la session (catégorie : Process) [par : Claude + Edhy]
+**Quoi** : Commit + push sur `main` de tout le travail de la session (tracking, page Appeler/Être rappelé,
+Agent CM, Orchestrateur, corrections visuels, ce journal).
+**Pourquoi** : Rien ne se perd ; point de contrôle permanent. Vérification préalable : `.env` (clés API)
+bien exclu par `.gitignore`, aucun secret dans `.nano-banana-config.json` ni `.claude/`.
+**Où** : commit `79722be` (`097ffea..79722be main -> main`), remote `github.com/contactagdmarketing-commits/SITE-VERSION-1`.
+**Comment** : `git add -A` puis commit + `git push`. Branche `main` (convention du repo : commits directs sur main).
